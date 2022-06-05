@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vistas;
-namespace Proyecto
+
+namespace Vistas
 {
     static class Program
     {
@@ -16,7 +16,6 @@ namespace Proyecto
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
         }
     }
 }

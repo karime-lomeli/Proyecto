@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Controlador
+{
+   public class Prueba
+    {
+        public string inicio()
+        {
+            return "Holaaaaaaaaaaaaaa";
+        }
+    }
+}

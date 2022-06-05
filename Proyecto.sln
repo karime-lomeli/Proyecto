@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyecto.csproj", "{BD3CBA81-46F9-4034-8C9F-5CDB2826325A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{2112D9CA-3D7D-4BE6-BAF8-DEFD1AFC6E6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controlador", "Controlador\Controlador.csproj", "{CF81F687-1797-4D4B-B8A8-A7A2342DC141}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BD3CBA81-46F9-4034-8C9F-5CDB2826325A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD3CBA81-46F9-4034-8C9F-5CDB2826325A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD3CBA81-46F9-4034-8C9F-5CDB2826325A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2112D9CA-3D7D-4BE6-BAF8-DEFD1AFC6E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2112D9CA-3D7D-4BE6-BAF8-DEFD1AFC6E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2112D9CA-3D7D-4BE6-BAF8-DEFD1AFC6E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2112D9CA-3D7D-4BE6-BAF8-DEFD1AFC6E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF81F687-1797-4D4B-B8A8-A7A2342DC141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF81F687-1797-4D4B-B8A8-A7A2342DC141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF81F687-1797-4D4B-B8A8-A7A2342DC141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF81F687-1797-4D4B-B8A8-A7A2342DC141}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
