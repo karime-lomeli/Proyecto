@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Conexion;
+using Conexion.models;
 
 
 namespace Controlador
@@ -12,8 +12,9 @@ namespace Controlador
     {
         public string inicio()
         {
-            Class1 objeto = new Class1();
-            return objeto.inicio();
+            ADProductos objeto = new ADProductos();
+            objeto.Insertar();
+            return "Hola";
         }
     }
 }
