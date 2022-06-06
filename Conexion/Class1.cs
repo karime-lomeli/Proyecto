@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Conexion;
 
-
-namespace Controlador
+namespace Conexion
 {
-   public class Prueba
+    public class Class1
     {
         public string inicio()
         {
-            Class1 objeto = new Class1();
-            return objeto.inicio();
+            return "Hola soy la conexion";
         }
     }
 }
