@@ -1,7 +1,7 @@
 ﻿
 namespace Vistas
 {
-    partial class Form2
+    partial class Linea
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,18 @@ namespace Vistas
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Linea
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.IsMdiContainer = true;
+            this.Name = "Linea";
             this.Text = "Form2";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

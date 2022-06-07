@@ -16,5 +16,30 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void Productos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBusquedaEdm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Vistas
             this.tabControl1.Location = new System.Drawing.Point(0, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(801, 451);
+            this.tabControl1.Size = new System.Drawing.Size(0, 0);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -60,7 +60,7 @@ namespace Vistas
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(793, 425);
+            this.tabPage2.Size = new System.Drawing.Size(0, 0);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Registrar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -70,9 +70,11 @@ namespace Vistas
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Name = "Productos";
-            this.Text = "Form2";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Productos_Load);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

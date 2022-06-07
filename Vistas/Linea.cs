@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class Form2 : Form
+    public partial class Linea : Form
     {
-        public Form2()
+        public Linea()
         {
             InitializeComponent();
         }
