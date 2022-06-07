@@ -30,5 +30,13 @@ namespace Vistas
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 Form = new Form1();
+            Form.Show();
+            Hide();
+
+        }
     }
 }
