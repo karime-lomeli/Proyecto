@@ -19,7 +19,9 @@ namespace Vistas
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Salidas Objeto = new Salidas();
+            Objeto.MdiParent = this;
+            Objeto.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,6 +34,13 @@ namespace Vistas
         private void button7_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Usuarios Objeto = new Usuarios();
+            Objeto.MdiParent = this;
+            Objeto.Show();
         }
     }
 }
