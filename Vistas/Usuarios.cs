@@ -16,5 +16,30 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void bCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bGuardad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bNuevonp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboAcceso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

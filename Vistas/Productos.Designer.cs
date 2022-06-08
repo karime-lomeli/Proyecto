@@ -80,10 +80,10 @@ namespace Vistas
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(-5, 71);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(959, 481);
+            this.tabControl1.Size = new System.Drawing.Size(936, 390);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
@@ -106,7 +106,6 @@ namespace Vistas
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.bCancelar);
             this.tabPage2.Controls.Add(this.bEditar);
             this.tabPage2.Controls.Add(this.bGuardad);
@@ -116,7 +115,7 @@ namespace Vistas
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(951, 455);
+            this.tabPage2.Size = new System.Drawing.Size(928, 364);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Registrar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -448,10 +447,11 @@ namespace Vistas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(398, 35);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(392, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 27;
+            this.label5.Size = new System.Drawing.Size(112, 24);
+            this.label5.TabIndex = 3;
             this.label5.Text = "Productos";
             // 
             // Productos
@@ -460,6 +460,7 @@ namespace Vistas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 473);
             this.ControlBox = false;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
             this.Name = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);
@@ -467,13 +468,13 @@ namespace Vistas
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -493,7 +494,6 @@ namespace Vistas
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bCancelar;
         private System.Windows.Forms.Button bEditar;
         private System.Windows.Forms.Button bGuardad;
@@ -517,5 +517,6 @@ namespace Vistas
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textIdedm;
         private System.Windows.Forms.TextBox textNombreedm;
+        private System.Windows.Forms.Label label5;
     }
 }
