@@ -40,7 +40,13 @@ namespace Vistas
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -81,7 +87,7 @@ namespace Vistas
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 94);
+            this.button1.Location = new System.Drawing.Point(40, 86);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -91,7 +97,7 @@ namespace Vistas
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(13, 160);
+            this.button2.Location = new System.Drawing.Point(40, 163);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 3;
@@ -101,7 +107,7 @@ namespace Vistas
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(13, 215);
+            this.button3.Location = new System.Drawing.Point(57, 251);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -110,7 +116,7 @@ namespace Vistas
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(13, 268);
+            this.button4.Location = new System.Drawing.Point(40, 324);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
@@ -120,7 +126,7 @@ namespace Vistas
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 369);
+            this.button5.Location = new System.Drawing.Point(40, 444);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 6;
@@ -129,7 +135,7 @@ namespace Vistas
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(13, 324);
+            this.button6.Location = new System.Drawing.Point(40, 369);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 7;
@@ -146,18 +152,53 @@ namespace Vistas
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Location = new System.Drawing.Point(0, 28);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(176, 567);
+            this.panel4.TabIndex = 27;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(188, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(822, 487);
+            this.panel1.TabIndex = 21;
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 594);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(1161, 22);
+            this.statusStrip.TabIndex = 28;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 616);
+            this.Controls.Add(this.statusStrip);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
@@ -166,6 +207,9 @@ namespace Vistas
             this.Text = "Form1";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +228,9 @@ namespace Vistas
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }

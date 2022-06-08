@@ -458,10 +458,10 @@ namespace Vistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 473);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(943, 465);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);
             this.tabControl1.ResumeLayout(false);
