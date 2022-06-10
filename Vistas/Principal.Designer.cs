@@ -58,7 +58,7 @@ namespace Vistas
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1161, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1000, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -180,9 +180,9 @@ namespace Vistas
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 594);
+            this.statusStrip.Location = new System.Drawing.Point(0, 578);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1161, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1000, 22);
             this.statusStrip.TabIndex = 28;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -195,7 +195,7 @@ namespace Vistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 616);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button7);

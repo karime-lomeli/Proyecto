@@ -31,19 +31,23 @@ namespace Vistas
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataListado = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bEliminar = new System.Windows.Forms.Button();
+            this.bBuscar = new System.Windows.Forms.Button();
+            this.txtBusquedaEdm = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtBusquedaEdm = new System.Windows.Forms.TextBox();
-            this.bBuscar = new System.Windows.Forms.Button();
-            this.bEliminar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.bCancelar = new System.Windows.Forms.Button();
+            this.bEditar = new System.Windows.Forms.Button();
+            this.bGuardad = new System.Windows.Forms.Button();
+            this.bNuevonp = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.total_global = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,21 +63,17 @@ namespace Vistas
             this.label19 = new System.Windows.Forms.Label();
             this.textIdedm = new System.Windows.Forms.TextBox();
             this.textNombreedm = new System.Windows.Forms.TextBox();
-            this.bNuevonp = new System.Windows.Forms.Button();
-            this.bGuardad = new System.Windows.Forms.Button();
-            this.bEditar = new System.Windows.Forms.Button();
-            this.bCancelar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataListado = new System.Windows.Forms.DataGridView();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,59 +99,66 @@ namespace Vistas
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(951, 455);
+            this.tabPage1.Size = new System.Drawing.Size(928, 364);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label2
             // 
-            this.tabPage2.Controls.Add(this.bCancelar);
-            this.tabPage2.Controls.Add(this.bEditar);
-            this.tabPage2.Controls.Add(this.bGuardad);
-            this.tabPage2.Controls.Add(this.bNuevonp);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.dataListado);
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(928, 364);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Registrar";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(240, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Producto";
             // 
-            // dataListado
+            // label1
             // 
-            this.dataListado.AllowUserToAddRows = false;
-            this.dataListado.AllowUserToDeleteRows = false;
-            this.dataListado.AllowUserToOrderColumns = true;
-            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataListado.BackgroundColor = System.Drawing.Color.White;
-            this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(0, 149);
-            this.dataListado.MultiSelect = false;
-            this.dataListado.Name = "dataListado";
-            this.dataListado.ReadOnly = true;
-            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(0, 0);
-            this.dataListado.TabIndex = 13;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Productos";
             // 
-            // Eliminar
+            // bEliminar
             // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
+            this.bEliminar.Location = new System.Drawing.Point(762, 91);
+            this.bEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bEliminar.Name = "bEliminar";
+            this.bEliminar.Size = new System.Drawing.Size(87, 28);
+            this.bEliminar.TabIndex = 19;
+            this.bEliminar.Text = "Eliminar";
+            this.bEliminar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // bBuscar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(103, 127);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(0, 0);
-            this.dataGridView1.TabIndex = 0;
+            this.bBuscar.Location = new System.Drawing.Point(570, 91);
+            this.bBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(87, 28);
+            this.bBuscar.TabIndex = 18;
+            this.bBuscar.Text = "Buscar";
+            this.bBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtBusquedaEdm
+            // 
+            this.txtBusquedaEdm.Location = new System.Drawing.Point(318, 96);
+            this.txtBusquedaEdm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBusquedaEdm.Name = "txtBusquedaEdm";
+            this.txtBusquedaEdm.Size = new System.Drawing.Size(221, 20);
+            this.txtBusquedaEdm.TabIndex = 17;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(9, 138);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(62, 17);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Eliminar";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -178,61 +185,57 @@ namespace Vistas
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
-            // checkBox1
+            // tabPage2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 138);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(62, 17);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Eliminar";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.bCancelar);
+            this.tabPage2.Controls.Add(this.bEditar);
+            this.tabPage2.Controls.Add(this.bGuardad);
+            this.tabPage2.Controls.Add(this.bNuevonp);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.dataListado);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(928, 364);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Registrar";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtBusquedaEdm
+            // bCancelar
             // 
-            this.txtBusquedaEdm.Location = new System.Drawing.Point(318, 96);
-            this.txtBusquedaEdm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBusquedaEdm.Name = "txtBusquedaEdm";
-            this.txtBusquedaEdm.Size = new System.Drawing.Size(221, 20);
-            this.txtBusquedaEdm.TabIndex = 17;
+            this.bCancelar.Location = new System.Drawing.Point(819, 319);
+            this.bCancelar.Name = "bCancelar";
+            this.bCancelar.Size = new System.Drawing.Size(99, 28);
+            this.bCancelar.TabIndex = 26;
+            this.bCancelar.Text = "&Cancelar";
+            this.bCancelar.UseVisualStyleBackColor = true;
             // 
-            // bBuscar
+            // bEditar
             // 
-            this.bBuscar.Location = new System.Drawing.Point(570, 91);
-            this.bBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(87, 28);
-            this.bBuscar.TabIndex = 18;
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = true;
+            this.bEditar.Location = new System.Drawing.Point(819, 229);
+            this.bEditar.Name = "bEditar";
+            this.bEditar.Size = new System.Drawing.Size(99, 28);
+            this.bEditar.TabIndex = 25;
+            this.bEditar.Text = "A&ctualizar";
+            this.bEditar.UseVisualStyleBackColor = true;
             // 
-            // bEliminar
+            // bGuardad
             // 
-            this.bEliminar.Location = new System.Drawing.Point(762, 91);
-            this.bEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bEliminar.Name = "bEliminar";
-            this.bEliminar.Size = new System.Drawing.Size(87, 28);
-            this.bEliminar.TabIndex = 19;
-            this.bEliminar.Text = "Eliminar";
-            this.bEliminar.UseVisualStyleBackColor = true;
+            this.bGuardad.Location = new System.Drawing.Point(819, 154);
+            this.bGuardad.Name = "bGuardad";
+            this.bGuardad.Size = new System.Drawing.Size(99, 28);
+            this.bGuardad.TabIndex = 24;
+            this.bGuardad.Text = "&Guardar";
+            this.bGuardad.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // bNuevonp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Productos";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(240, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Producto";
+            this.bNuevonp.Location = new System.Drawing.Point(819, 85);
+            this.bNuevonp.Name = "bNuevonp";
+            this.bNuevonp.Size = new System.Drawing.Size(99, 28);
+            this.bNuevonp.TabIndex = 23;
+            this.bNuevonp.Text = "&Nuevo";
+            this.bNuevonp.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -259,6 +262,31 @@ namespace Vistas
             this.groupBox2.Size = new System.Drawing.Size(774, 317);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(115, 89);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(214, 21);
+            this.comboBox1.TabIndex = 52;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Almacén";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 50;
             // 
             // total_global
             // 
@@ -383,66 +411,38 @@ namespace Vistas
             this.textNombreedm.Size = new System.Drawing.Size(187, 20);
             this.textNombreedm.TabIndex = 4;
             // 
-            // bNuevonp
+            // dataListado
             // 
-            this.bNuevonp.Location = new System.Drawing.Point(819, 85);
-            this.bNuevonp.Name = "bNuevonp";
-            this.bNuevonp.Size = new System.Drawing.Size(99, 28);
-            this.bNuevonp.TabIndex = 23;
-            this.bNuevonp.Text = "&Nuevo";
-            this.bNuevonp.UseVisualStyleBackColor = true;
+            this.dataListado.AllowUserToAddRows = false;
+            this.dataListado.AllowUserToDeleteRows = false;
+            this.dataListado.AllowUserToOrderColumns = true;
+            this.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataListado.BackgroundColor = System.Drawing.Color.White;
+            this.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Eliminar});
+            this.dataListado.Location = new System.Drawing.Point(0, 149);
+            this.dataListado.MultiSelect = false;
+            this.dataListado.Name = "dataListado";
+            this.dataListado.ReadOnly = true;
+            this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataListado.Size = new System.Drawing.Size(0, 0);
+            this.dataListado.TabIndex = 13;
             // 
-            // bGuardad
+            // Eliminar
             // 
-            this.bGuardad.Location = new System.Drawing.Point(819, 154);
-            this.bGuardad.Name = "bGuardad";
-            this.bGuardad.Size = new System.Drawing.Size(99, 28);
-            this.bGuardad.TabIndex = 24;
-            this.bGuardad.Text = "&Guardar";
-            this.bGuardad.UseVisualStyleBackColor = true;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
-            // bEditar
+            // dataGridView1
             // 
-            this.bEditar.Location = new System.Drawing.Point(819, 229);
-            this.bEditar.Name = "bEditar";
-            this.bEditar.Size = new System.Drawing.Size(99, 28);
-            this.bEditar.TabIndex = 25;
-            this.bEditar.Text = "A&ctualizar";
-            this.bEditar.UseVisualStyleBackColor = true;
-            // 
-            // bCancelar
-            // 
-            this.bCancelar.Location = new System.Drawing.Point(819, 319);
-            this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(99, 28);
-            this.bCancelar.TabIndex = 26;
-            this.bCancelar.Text = "&Cancelar";
-            this.bCancelar.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
-            this.label3.TabIndex = 50;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 51;
-            this.label4.Text = "Almacén";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(115, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 21);
-            this.comboBox1.TabIndex = 52;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(103, 127);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(0, 0);
+            this.dataGridView1.TabIndex = 0;
             // 
             // label5
             // 
@@ -458,7 +458,8 @@ namespace Vistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 465);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(959, 481);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -467,12 +468,12 @@ namespace Vistas
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

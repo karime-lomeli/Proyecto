@@ -462,19 +462,21 @@ namespace Vistas
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(397, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 24);
+            this.label1.Size = new System.Drawing.Size(222, 24);
             this.label1.TabIndex = 12;
-            this.label1.Text = "SALIDAS EDMS";
+            this.label1.Text = "SALIDAS PRODUCTOS";
             // 
             // Salidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 442);
+            this.ClientSize = new System.Drawing.Size(943, 465);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
+            this.Location = new System.Drawing.Point(200, 0);
             this.Name = "Salidas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
