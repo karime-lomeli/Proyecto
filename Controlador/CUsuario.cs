@@ -51,5 +51,10 @@ namespace Controlador
 
             return Objeto.buscar(texto);
         }
+        public static DataTable Login(string correo, string pass)
+        {
+            ADUsuario Objeto = new ADUsuario();
+            return Objeto.Login(correo, pass);
+        }
     }
 }

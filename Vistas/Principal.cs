@@ -12,6 +12,10 @@ namespace Vistas
 {
     public partial class Form1 : Form
     {
+        public string IdUsuario = "";
+        public string Apellidos = "";
+        public string Nombre = "";
+        public string Acceso = "";
         public Form1()
         {
             InitializeComponent();

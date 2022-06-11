@@ -9,6 +9,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 using System.Data;
 using MongoDB.Driver.Builders;
+using MongoDB.Driver.Linq;
 
 namespace Conexion
 {
@@ -212,6 +213,32 @@ namespace Conexion
             return Resultado;
         }
 
-      
+      public DataTable Login(string correo, string pass)
+        {
+            MongoCollection Usuario = db.GetCollection<ADUsuario>("Usuarios");
+            var Usuarios = Usuario.AsQueryable<ADUsuario>();
+            var res = from u in Usuarios where u.Email == correo && u.Password == pass select u;
+
+            List<ADUsuario> usuarios = res.ToList();
+
+            DataTable Resultado = new DataTable("usuario");
+
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("Nombre");
+            Resultado.Columns.Add("Apellido");
+            Resultado.Columns.Add("Email");
+            Resultado.Columns.Add("Acceso");
+            Resultado.Columns.Add("Password");
+            for (int i = 0; i < usuarios.Count; i++)
+            {
+                Resultado.Rows.Add(usuarios[i].Idusuario,
+                   usuarios[i].Nombre,
+                   usuarios[i].Apellido,
+                   usuarios[i].Email,
+                   usuarios[i].Acceso,
+                   usuarios[i].Password);
+            }
+            return Resultado;
+        }
     }
 }

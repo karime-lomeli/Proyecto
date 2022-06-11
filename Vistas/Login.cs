@@ -30,13 +30,32 @@ namespace Vistas
         {
 
         }
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 Form = new Form1();
-            Form.Show();
-            Hide();
+            DataTable Datos = CUsuario.Login(this.txtCorreo.Text, this.txtPass.Text);
 
+            if (Datos.Rows.Count==0)
+            {
+                MensajeError("Datos incorrectos");
+            }
+            
+            else
+            {
+
+               
+                Form1 Form = new Form1();
+                Form.IdUsuario = Datos.Rows[0][0].ToString();
+                Form.Apellidos = Datos.Rows[0][1].ToString();
+                Form.Nombre = Datos.Rows[0][2].ToString();
+                Form.Acceso = Datos.Rows[0][3].ToString();
+                Form.Show();
+                Hide();
+            }
         }
     }
 }
