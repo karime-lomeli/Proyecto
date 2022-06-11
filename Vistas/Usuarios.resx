@@ -117,6 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnEliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>653, 38</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEliminar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="btnEliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 28</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnEliminar.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
   <data name="&gt;&gt;btnEliminar.Name" xml:space="preserve">
     <value>btnEliminar</value>
   </data>
@@ -128,6 +146,21 @@
   </data>
   <data name="&gt;&gt;btnEliminar.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="labelNoParte.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelNoParte.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 46</value>
+  </data>
+  <data name="labelNoParte.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="labelNoParte.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="labelNoParte.Text" xml:space="preserve">
+    <value>USUARIO</value>
   </data>
   <data name="&gt;&gt;labelNoParte.Name" xml:space="preserve">
     <value>labelNoParte</value>
@@ -141,6 +174,18 @@
   <data name="&gt;&gt;labelNoParte.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="txtBuscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 43</value>
+  </data>
+  <data name="txtBuscar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
+  <data name="txtBuscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 20</value>
+  </data>
+  <data name="txtBuscar.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
   <data name="&gt;&gt;txtBuscar.Name" xml:space="preserve">
     <value>txtBuscar</value>
   </data>
@@ -152,6 +197,21 @@
   </data>
   <data name="&gt;&gt;txtBuscar.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="checkEliminar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkEliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 91</value>
+  </data>
+  <data name="checkEliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 17</value>
+  </data>
+  <data name="checkEliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="checkEliminar.Text" xml:space="preserve">
+    <value>Eliminar</value>
   </data>
   <data name="&gt;&gt;checkEliminar.Name" xml:space="preserve">
     <value>checkEliminar</value>
@@ -165,6 +225,21 @@
   <data name="&gt;&gt;checkEliminar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Eliminar.HeaderText" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="dataListado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 114</value>
+  </data>
+  <data name="dataListado.Size" type="System.Drawing.Size, System.Drawing">
+    <value>809, 210</value>
+  </data>
+  <data name="dataListado.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;dataListado.Name" xml:space="preserve">
     <value>dataListado</value>
   </data>
@@ -177,14 +252,12 @@
   <data name="&gt;&gt;dataListado.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>809, 324</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -655,142 +728,6 @@
   </data>
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>653, 38</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnEliminar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="btnEliminar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 28</value>
-  </data>
-  <data name="btnEliminar.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnEliminar.Text" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="&gt;&gt;btnEliminar.Name" xml:space="preserve">
-    <value>btnEliminar</value>
-  </data>
-  <data name="&gt;&gt;btnEliminar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnEliminar.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;btnEliminar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="labelNoParte.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelNoParte.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 46</value>
-  </data>
-  <data name="labelNoParte.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="labelNoParte.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="labelNoParte.Text" xml:space="preserve">
-    <value>USUARIO</value>
-  </data>
-  <data name="&gt;&gt;labelNoParte.Name" xml:space="preserve">
-    <value>labelNoParte</value>
-  </data>
-  <data name="&gt;&gt;labelNoParte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelNoParte.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;labelNoParte.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtBuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 43</value>
-  </data>
-  <data name="txtBuscar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 4, 3, 4</value>
-  </data>
-  <data name="txtBuscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 20</value>
-  </data>
-  <data name="txtBuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.Name" xml:space="preserve">
-    <value>txtBuscar</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="checkEliminar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkEliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 91</value>
-  </data>
-  <data name="checkEliminar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 17</value>
-  </data>
-  <data name="checkEliminar.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="checkEliminar.Text" xml:space="preserve">
-    <value>Eliminar</value>
-  </data>
-  <data name="&gt;&gt;checkEliminar.Name" xml:space="preserve">
-    <value>checkEliminar</value>
-  </data>
-  <data name="&gt;&gt;checkEliminar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkEliminar.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;checkEliminar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dataListado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 114</value>
-  </data>
-  <data name="dataListado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>809, 210</value>
-  </data>
-  <data name="dataListado.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;dataListado.Name" xml:space="preserve">
-    <value>dataListado</value>
-  </data>
-  <data name="&gt;&gt;dataListado.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataListado.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;dataListado.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Eliminar.HeaderText" xml:space="preserve">
-    <value>Eliminar</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

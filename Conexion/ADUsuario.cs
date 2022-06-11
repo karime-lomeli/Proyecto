@@ -125,6 +125,26 @@ namespace Conexion
         }
         public string Editar(ADUsuario Objeto)
         {
+            var Usuario = db.GetCollection<ADUsuario>("Usuarios");
+            var query = new QueryDocument
+            {
+                {"_id",ObjectId.Parse(Objeto.Idusuario) }
+            };
+            var update = new UpdateDocument
+            {
+                {
+                    "$set", new BsonDocument
+                    {
+                        {"Nombre", Objeto.Nombre },
+                        {"Apellido",Objeto.Apellido },
+                        {"Email",Objeto.Email },
+                        {"Acceso",Objeto.Acceso },
+                        {"Password",Objeto.Password }
+
+                    }
+                }
+            };
+            Usuario.Update(query, update);
             return "Hola";
         }
         public DataTable mostrar()

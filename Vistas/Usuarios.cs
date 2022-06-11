@@ -24,6 +24,7 @@ namespace Vistas
         {
             CUsuario Objeto = new CUsuario();
             this.dataListado.DataSource = Objeto.Mostrar();
+            this.OcultarColumnas();
         }
 
         private void MensajeOk(string mensaje)
@@ -45,6 +46,11 @@ namespace Vistas
             this.Acceso.Text = string.Empty;
             this.txtPass.Text = string.Empty;
 
+        }
+        private void OcultarColumnas()
+        {
+            this.dataListado.Columns[0].Visible = false;
+            this.dataListado.Columns["Id"].Visible = false;
         }
         private void Habilitar(bool valor)
         {
@@ -159,5 +165,63 @@ namespace Vistas
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (!txtId.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.HabilitarBotones();
+                this.Habilitar(true);
+            }
+            else
+            {
+                this.MensajeError("Debe seleccionar primero un registro a editar desde la pestaña Listado");
+            }
+        }
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.HabilitarBotones();
+            this.Limpiar();
+            this.Habilitar(false);
+        }
+      
+
+        private void checkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEliminar.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
+
+            }
+        }
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListado.Columns["ELiminar"].Index)
+            {
+                DataGridViewCheckBoxCell checkBox1 = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["ELiminar"];
+                checkBox1.Value = !Convert.ToBoolean(checkBox1.Value);
+            }
+        }
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtId.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Id"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtApellido.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Apellido"].Value);
+            this.txtEmail.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Email"].Value);
+            
+            this.Acceso.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Acceso"].Value);
+            this.txtPass.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Password"].Value);
+
+            this.tabControl1.SelectedIndex = 1;
+        }
+
+        
     }
 }
