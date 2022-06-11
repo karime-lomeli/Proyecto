@@ -8,6 +8,7 @@ using Conexion.models;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 using System.Data;
+using MongoDB.Driver.Builders;
 
 namespace Conexion
 {
@@ -146,6 +147,15 @@ namespace Conexion
             };
             Usuario.Update(query, update);
             return "Hola";
+        }
+        public string Eliminar(ADUsuario Objeto)
+        {
+            var Usuario = db.GetCollection<ADUsuario>("Usuarios");
+            var query = Query.EQ("_id", ObjectId.Parse(Objeto.Idusuario));
+            Usuario.Remove(query);
+
+            return "hola";
+
         }
         public DataTable mostrar()
         {

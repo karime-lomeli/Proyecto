@@ -86,6 +86,7 @@ namespace Vistas
             resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // labelNoParte
             // 

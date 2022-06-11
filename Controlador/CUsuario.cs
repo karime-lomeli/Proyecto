@@ -39,5 +39,11 @@ namespace Controlador
             
             return new ADUsuario().mostrar();
         }
+        public static string Eliminar(string Id)
+        {
+            ADUsuario Objeto = new ADUsuario();
+            Objeto.Idusuario = Id;
+            return Objeto.Eliminar(Objeto);
+        }
     }
 }
