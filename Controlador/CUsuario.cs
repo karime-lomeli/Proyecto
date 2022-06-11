@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,11 @@ namespace Controlador
             Objeto.Acceso = acceso;
             Objeto.Password = password;
             return Objeto.Editar(Objeto);
+        }
+        public DataTable Mostrar()
+        {
+            
+            return new ADUsuario().mostrar();
         }
     }
 }

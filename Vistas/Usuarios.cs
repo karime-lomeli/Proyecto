@@ -20,6 +20,11 @@ namespace Vistas
         {
             InitializeComponent();
         }
+        public void Mostrar()
+        {
+            CUsuario Objeto = new CUsuario();
+            this.dataListado.DataSource = Objeto.Mostrar();
+        }
 
         private void MensajeOk(string mensaje)
         {
@@ -86,7 +91,7 @@ namespace Vistas
             this.Top = 0;
             this.Left = 177;
 
-            //this.Mostrar();
+            this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
         }
@@ -143,7 +148,7 @@ namespace Vistas
                     this.IsEditar = false;
                     this.HabilitarBotones();
                     this.Limpiar();
-                    //this.Mostrar();
+                    this.Mostrar();
 
 
                 }

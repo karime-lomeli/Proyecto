@@ -7,6 +7,7 @@ using MongoDB.Driver;
 using Conexion.models;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using System.Data;
 
 namespace Conexion
 {
@@ -125,6 +126,35 @@ namespace Conexion
         public string Editar(ADUsuario Objeto)
         {
             return "Hola";
+        }
+        public DataTable mostrar()
+        {
+            List<ADUsuario> usuarios = db.GetCollection<ADUsuario>("Usuarios").FindAll().ToList();
+            //var query = from item in usuarios.AsEnumerable() select item;
+            DataTable Resultado = new DataTable("usuario");
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("Nombre");
+            Resultado.Columns.Add("Apellido");
+            Resultado.Columns.Add("Email");
+            Resultado.Columns.Add("Acceso");
+            Resultado.Columns.Add("Password");
+            
+            string x="Hola";
+            for(int i = 0; i < usuarios.Count; i++)
+            {
+                Resultado.Rows.Add(usuarios[i].Idusuario,
+                    usuarios[i].Nombre,
+                    usuarios[i].Apellido,
+                    usuarios[i].Email,
+                    usuarios[i].Acceso,
+                    usuarios[i].Password);
+            }
+
+            
+
+           // //
+
+            return Resultado;
         }
 
     }
