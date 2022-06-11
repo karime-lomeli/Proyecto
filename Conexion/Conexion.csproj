@@ -131,6 +131,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADProductos.cs" />
     <Compile Include="ADUsuario.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="models\ADProductos.cs" />
