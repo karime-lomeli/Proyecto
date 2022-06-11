@@ -56,6 +56,7 @@ namespace Vistas
             this.label2 = new System.Windows.Forms.Label();
             this.Acceso = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -72,6 +73,7 @@ namespace Vistas
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.labelNoParte);
             this.tabPage1.Controls.Add(this.txtBuscar);
@@ -191,6 +193,7 @@ namespace Vistas
             resources.ApplyResources(this.btnCancelar, "btnCancelar");
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -252,6 +255,13 @@ namespace Vistas
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // btnBuscar
+            // 
+            resources.ApplyResources(this.btnBuscar, "btnBuscar");
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Usuarios
             // 
             resources.ApplyResources(this, "$this");
@@ -303,5 +313,6 @@ namespace Vistas
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox Acceso;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

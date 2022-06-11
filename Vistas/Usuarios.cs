@@ -132,7 +132,7 @@ namespace Vistas
                             this.txtPass.Text);
 
                     }
-                    if (respuesta.Equals("Hola"))
+                    if (respuesta.Equals("OK"))
                     {
                         if (this.IsNuevo)
                         {
@@ -261,6 +261,28 @@ namespace Vistas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.HabilitarBotones();
+            this.Limpiar();
+            this.Habilitar(false);
+            this.txtId.Text = string.Empty;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (this.txtBuscar.Text == string.Empty)
+            {
+                MensajeError("Ingrese texto");
+            }
+            else
+            {
+                this.dataListado.DataSource = CUsuario.BuscarUsuario(this.txtBuscar.Text.ToUpper());
             }
         }
     }

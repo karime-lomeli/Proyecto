@@ -122,7 +122,7 @@ namespace Conexion
             var Us = db.GetCollection<ADUsuario>("Usuarios");
             Us.Insert(Objeto);
 
-            return "Hola";
+            return "OK";
         }
         public string Editar(ADUsuario Objeto)
         {
@@ -146,7 +146,7 @@ namespace Conexion
                 }
             };
             Usuario.Update(query, update);
-            return "Hola";
+            return "OK";
         }
         public string Eliminar(ADUsuario Objeto)
         {
@@ -154,7 +154,7 @@ namespace Conexion
             var query = Query.EQ("_id", ObjectId.Parse(Objeto.Idusuario));
             Usuario.Remove(query);
 
-            return "hola";
+            return "OK";
 
         }
         public DataTable mostrar()
@@ -186,6 +186,32 @@ namespace Conexion
 
             return Resultado;
         }
+        public DataTable buscar(string texto)
+        {
+            MongoCollection Usuario = db.GetCollection<ADUsuario>("Usuarios");
+            var filtro = Query<ADUsuario>.EQ(cl => cl.Nombre, texto);
+            List<ADUsuario> usuarios = Usuario.FindAs<ADUsuario>(filtro).ToList();
 
+            DataTable Resultado = new DataTable("usuario");
+
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("Nombre");
+            Resultado.Columns.Add("Apellido");
+            Resultado.Columns.Add("Email");
+            Resultado.Columns.Add("Acceso");
+            Resultado.Columns.Add("Password");
+            for(int i = 0; i < usuarios.Count; i++)
+            {
+                Resultado.Rows.Add(usuarios[i].Idusuario,
+                   usuarios[i].Nombre,
+                   usuarios[i].Apellido,
+                   usuarios[i].Email,
+                   usuarios[i].Acceso,
+                   usuarios[i].Password);
+            }
+            return Resultado;
+        }
+
+      
     }
 }

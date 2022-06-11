@@ -45,5 +45,11 @@ namespace Controlador
             Objeto.Idusuario = Id;
             return Objeto.Eliminar(Objeto);
         }
+        public static DataTable BuscarUsuario(string texto)
+        {
+            ADUsuario Objeto = new ADUsuario();
+
+            return Objeto.buscar(texto);
+        }
     }
 }
