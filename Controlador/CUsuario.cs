@@ -21,7 +21,7 @@ namespace Controlador
             return Objeto.Insertar(Objeto);
 
         }
-        public static string Editar(int idusuario, string nombre, string apellido, string email,
+        public static string Editar(string idusuario, string nombre, string apellido, string email,
              string acceso, string password)
         {
             ADUsuario Objeto = new ADUsuario();

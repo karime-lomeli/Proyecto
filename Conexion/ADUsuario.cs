@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using Conexion.models;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace Conexion
 {
     public class ADUsuario
     {
-        private int _Idusuario;
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        private string _Idusuario;
         private string _Nombre;
         private string _Apellido;
         private string _Email;
@@ -18,7 +22,7 @@ namespace Conexion
         private string _Password;
         private string _TextoBuscar;
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
-        public int Idusuario
+        public string Idusuario
         {
             get
             {

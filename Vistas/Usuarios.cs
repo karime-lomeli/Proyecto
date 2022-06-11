@@ -113,7 +113,7 @@ namespace Vistas
                     }
                     else
                     {
-                        respuesta = CUsuario.Editar(Convert.ToInt32(this.txtId.Text),
+                        respuesta = CUsuario.Editar(this.txtId.Text,
                             this.txtNombre.Text.Trim().ToUpper(),
                             this.txtApellido.Text.Trim().ToUpper(),
                             this.txtEmail.Text.Trim(),
