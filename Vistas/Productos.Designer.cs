@@ -40,6 +40,8 @@ namespace Vistas
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.Almacen = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -59,8 +61,6 @@ namespace Vistas
             this.txtId = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -75,9 +75,9 @@ namespace Vistas
             this.label5.Location = new System.Drawing.Point(406, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 57);
+            this.label5.Size = new System.Drawing.Size(310, 57);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Productos";
+            this.label5.Text = "PRODUCTOS";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tabControl1
@@ -85,7 +85,7 @@ namespace Vistas
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(3, 83);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1096, 492);
@@ -100,9 +100,9 @@ namespace Vistas
             this.tabPage2.Controls.Add(this.txtBuscar);
             this.tabPage2.Controls.Add(this.btnBuscar);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1088, 463);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado";
@@ -124,7 +124,7 @@ namespace Vistas
             // 
             this.checkEliminar.AutoSize = true;
             this.checkEliminar.Location = new System.Drawing.Point(625, 87);
-            this.checkEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.checkEliminar.Name = "checkEliminar";
             this.checkEliminar.Size = new System.Drawing.Size(77, 20);
             this.checkEliminar.TabIndex = 14;
@@ -144,7 +144,7 @@ namespace Vistas
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
             this.dataListado.Location = new System.Drawing.Point(-1, 144);
-            this.dataListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataListado.Margin = new System.Windows.Forms.Padding(4);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
@@ -218,18 +218,36 @@ namespace Vistas
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.txtNombre);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1088, 463);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Registrar";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 16);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "NOMBRE";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(142, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 16);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "ID";
+            // 
             // Almacen
             // 
             this.Almacen.FormattingEnabled = true;
             this.Almacen.Location = new System.Drawing.Point(141, 182);
-            this.Almacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Almacen.Margin = new System.Windows.Forms.Padding(4);
             this.Almacen.Name = "Almacen";
             this.Almacen.Size = new System.Drawing.Size(300, 24);
             this.Almacen.TabIndex = 62;
@@ -237,7 +255,7 @@ namespace Vistas
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(647, 366);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(132, 34);
             this.btnCancelar.TabIndex = 61;
@@ -249,7 +267,7 @@ namespace Vistas
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEditar.Location = new System.Drawing.Point(161, 21);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 34);
             this.btnEditar.TabIndex = 60;
@@ -261,7 +279,7 @@ namespace Vistas
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnGuardar.Location = new System.Drawing.Point(827, 366);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(132, 34);
             this.btnGuardar.TabIndex = 59;
@@ -273,7 +291,7 @@ namespace Vistas
             // 
             this.btnNuevo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnNuevo.Location = new System.Drawing.Point(48, 21);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(82, 34);
             this.btnNuevo.TabIndex = 58;
@@ -284,7 +302,7 @@ namespace Vistas
             // txtS
             // 
             this.txtS.Location = new System.Drawing.Point(663, 240);
-            this.txtS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtS.Margin = new System.Windows.Forms.Padding(4);
             this.txtS.Name = "txtS";
             this.txtS.Size = new System.Drawing.Size(116, 22);
             this.txtS.TabIndex = 55;
@@ -302,7 +320,7 @@ namespace Vistas
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(141, 320);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(300, 110);
@@ -331,7 +349,7 @@ namespace Vistas
             // txtMin
             // 
             this.txtMin.Location = new System.Drawing.Point(663, 180);
-            this.txtMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMin.Margin = new System.Windows.Forms.Padding(4);
             this.txtMin.Name = "txtMin";
             this.txtMin.Size = new System.Drawing.Size(116, 22);
             this.txtMin.TabIndex = 52;
@@ -339,7 +357,7 @@ namespace Vistas
             // txtRequerido
             // 
             this.txtRequerido.Location = new System.Drawing.Point(663, 120);
-            this.txtRequerido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequerido.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequerido.Name = "txtRequerido";
             this.txtRequerido.Size = new System.Drawing.Size(116, 22);
             this.txtRequerido.TabIndex = 43;
@@ -348,7 +366,7 @@ namespace Vistas
             // 
             this.Linea.FormattingEnabled = true;
             this.Linea.Location = new System.Drawing.Point(141, 243);
-            this.Linea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Linea.Margin = new System.Windows.Forms.Padding(4);
             this.Linea.Name = "Linea";
             this.Linea.Size = new System.Drawing.Size(300, 24);
             this.Linea.TabIndex = 41;
@@ -388,7 +406,7 @@ namespace Vistas
             // 
             this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(141, 119);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(43, 22);
             this.txtId.TabIndex = 36;
@@ -406,29 +424,11 @@ namespace Vistas
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(193, 119);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.MaxLength = 18;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(248, 22);
             this.txtNombre.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 95);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 16);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 16);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "NOMBRE";
             // 
             // Productos
             // 
@@ -439,7 +439,7 @@ namespace Vistas
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);
             this.tabControl1.ResumeLayout(false);

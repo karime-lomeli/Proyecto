@@ -82,6 +82,7 @@ namespace Vistas
             this.tabPage1.Controls.Add(this.dataListado);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnBuscar
             // 
