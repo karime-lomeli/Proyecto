@@ -146,6 +146,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLineaAlmacen.cs" />
     <Compile Include="CProductos.cs" />
     <Compile Include="CUsuario.cs" />
     <Compile Include="Program.cs" />

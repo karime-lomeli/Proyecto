@@ -46,5 +46,12 @@ namespace Vistas
             Objeto.MdiParent = this;
             Objeto.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Linea Objeto = new Linea();
+            Objeto.MdiParent = this;
+            Objeto.Show();
+        }
     }
 }

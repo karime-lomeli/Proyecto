@@ -169,8 +169,6 @@ namespace Conexion
             Resultado.Columns.Add("Email");
             Resultado.Columns.Add("Acceso");
             Resultado.Columns.Add("Password");
-            
-            string x="Hola";
             for(int i = 0; i < usuarios.Count; i++)
             {
                 Resultado.Rows.Add(usuarios[i].Idusuario,

@@ -227,7 +227,7 @@ namespace Vistas
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Se Eliminaran los usuarios seleccionados", "Sistema de EDMs", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Se Eliminaran los usuarios seleccionados", "Dashwork", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
 
