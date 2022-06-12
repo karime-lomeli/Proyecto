@@ -31,18 +31,14 @@ namespace Vistas
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.labelTotal = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bBuscar = new System.Windows.Forms.Button();
-            this.labelNoParte = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridViewDetalle = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtRequerido = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtMinimo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,11 +62,10 @@ namespace Vistas
             this.dateTimePickerFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.k = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtRequerido = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -89,51 +84,21 @@ namespace Vistas
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(933, 378);
+            this.tabControl1.Size = new System.Drawing.Size(784, 378);
             this.tabControl1.TabIndex = 11;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dateTimePickerFechaFin);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.dateTimePickerFechaInicio);
             this.tabPage2.Controls.Add(this.labelTotal);
             this.tabPage2.Controls.Add(this.dataListado);
-            this.tabPage2.Controls.Add(this.bBuscar);
-            this.tabPage2.Controls.Add(this.labelNoParte);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(925, 349);
+            this.tabPage2.Size = new System.Drawing.Size(776, 349);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Salidas";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerFechaFin
-            // 
-            this.dateTimePickerFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFechaFin.Location = new System.Drawing.Point(401, 33);
-            this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
-            this.dateTimePickerFechaFin.Size = new System.Drawing.Size(132, 21);
-            this.dateTimePickerFechaFin.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(398, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 16);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Fecha fin de busqueda";
-            // 
-            // dateTimePickerFechaInicio
-            // 
-            this.dateTimePickerFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFechaInicio.Location = new System.Drawing.Point(179, 33);
-            this.dateTimePickerFechaInicio.Name = "dateTimePickerFechaInicio";
-            this.dateTimePickerFechaInicio.Size = new System.Drawing.Size(147, 21);
-            this.dateTimePickerFechaInicio.TabIndex = 14;
             // 
             // labelTotal
             // 
@@ -160,7 +125,7 @@ namespace Vistas
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(916, 242);
+            this.dataListado.Size = new System.Drawing.Size(777, 242);
             this.dataListado.TabIndex = 11;
             // 
             // Eliminar
@@ -169,26 +134,6 @@ namespace Vistas
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             // 
-            // bBuscar
-            // 
-            this.bBuscar.Location = new System.Drawing.Point(637, 26);
-            this.bBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(87, 28);
-            this.bBuscar.TabIndex = 8;
-            this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = true;
-            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
-            // 
-            // labelNoParte
-            // 
-            this.labelNoParte.AutoSize = true;
-            this.labelNoParte.Location = new System.Drawing.Point(176, 14);
-            this.labelNoParte.Name = "labelNoParte";
-            this.labelNoParte.Size = new System.Drawing.Size(150, 16);
-            this.labelNoParte.TabIndex = 7;
-            this.labelNoParte.Text = "Fecha inicio de busqueda";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dataGridViewDetalle);
@@ -196,7 +141,7 @@ namespace Vistas
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(925, 349);
+            this.tabPage3.Size = new System.Drawing.Size(776, 349);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Registro";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -210,15 +155,6 @@ namespace Vistas
             this.dataGridViewDetalle.Name = "dataGridViewDetalle";
             this.dataGridViewDetalle.Size = new System.Drawing.Size(741, 117);
             this.dataGridViewDetalle.TabIndex = 13;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(246, 14);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 28);
-            this.btnCancelar.TabIndex = 12;
-            this.btnCancelar.Text = "&Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -245,6 +181,22 @@ namespace Vistas
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles";
+            // 
+            // txtRequerido
+            // 
+            this.txtRequerido.Location = new System.Drawing.Point(643, 24);
+            this.txtRequerido.Name = "txtRequerido";
+            this.txtRequerido.Size = new System.Drawing.Size(69, 21);
+            this.txtRequerido.TabIndex = 56;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(573, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 16);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Requerido";
             // 
             // txtMinimo
             // 
@@ -442,6 +394,15 @@ namespace Vistas
             this.label3.Size = new System.Drawing.Size(0, 16);
             this.label3.TabIndex = 4;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(246, 14);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(99, 28);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(127, 13);
@@ -471,22 +432,6 @@ namespace Vistas
             this.label1.Size = new System.Drawing.Size(222, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "SALIDAS PRODUCTOS";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(573, 27);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 16);
-            this.label11.TabIndex = 55;
-            this.label11.Text = "Requerido";
-            // 
-            // txtRequerido
-            // 
-            this.txtRequerido.Location = new System.Drawing.Point(643, 24);
-            this.txtRequerido.Name = "txtRequerido";
-            this.txtRequerido.Size = new System.Drawing.Size(69, 21);
-            this.txtRequerido.TabIndex = 56;
             // 
             // Salidas
             // 
@@ -522,14 +467,9 @@ namespace Vistas
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaFin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaInicio;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
-        private System.Windows.Forms.Button bBuscar;
-        private System.Windows.Forms.Label labelNoParte;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridViewDetalle;
         private System.Windows.Forms.Button btnCancelar;
