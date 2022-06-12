@@ -20,6 +20,7 @@ namespace Vistas
         public Productos()
         {
             InitializeComponent();
+            this.LlenarLinea();
         }
         public static Productos GetInstancia()
         {
@@ -39,13 +40,17 @@ namespace Vistas
         {
             MessageBox.Show(mensaje, "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        
+        
+
+       
         private void Productos_Load(object sender, EventArgs e)
         {
             this.Top = 0;
             this.Left = 177;
-            /*this.Mostrar();
+            this.Mostrar();
             this.Habilitar(false);
-            this.HabilitarBotones();*/
+            this.HabilitarBotones();
         }
 
         private void Limpiar()
@@ -90,7 +95,15 @@ namespace Vistas
                 this.btnCancelar.Enabled = false;
             }
         }
+        private void OcultarColumnas()
+        {
+            this.dataListado.Columns["Eliminar"].Visible = false;
+            this.dataListado.Columns["Id"].Visible = false;
+           // this.dataListado.Columns["idworkcenter"].Visible = false;
+            //this.dataListado.Columns["stock_minimo"].Visible = false;
+            //this.dataListado.Columns["rfa_pendiente"].Visible = false;
 
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             this.IsNuevo = true;
@@ -121,7 +134,7 @@ namespace Vistas
                         string fecha = DateTime.Now.ToString("yyyy.MM.dd_hh.mm.ss");
                         respuesta = CProductos.Insertar(this.txtNombre.Text.Trim().ToUpper(),
                             this.txtDescripcion.Text.Trim().ToUpper(),
-                            this.Almacen.Text.Trim().ToUpper(),
+                            (string)this.Almacen.SelectedValue,
                             this.Linea.Text.Trim().ToUpper(),
                             Convert.ToInt32(this.txtRequerido.Text),
                             Convert.ToInt32(this.txtMin.Text),
@@ -133,9 +146,8 @@ namespace Vistas
                         respuesta = CProductos.Editar(this.txtId.Text,
                             this.txtNombre.Text.Trim().ToUpper(),
                             this.txtDescripcion.Text.Trim().ToUpper(),
-                            this.Almacen.Text.Trim().ToUpper(),
+                            "Hola",
                             this.Linea.Text.Trim().ToUpper(),
-
                             Convert.ToInt32(this.txtRequerido.Text),
                             Convert.ToInt32(this.txtMin.Text),
                             Convert.ToInt32(this.txtS.Text),
@@ -162,7 +174,7 @@ namespace Vistas
                     this.IsEditar = false;
                     this.HabilitarBotones();
                     this.Limpiar();
-                    //this.Mostrar();
+                    this.Mostrar();
 
 
                 }
@@ -173,5 +185,78 @@ namespace Vistas
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+        private void Mostrar()
+         {
+             this.dataListado.DataSource = CProductos.Mostrar();
+             this.OcultarColumnas();
+            // labelTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+
+         }
+        private void LlenarLinea()
+        {
+            CLineaAlmacen Objeto = new CLineaAlmacen();
+            Linea.DataSource = Objeto.Mostrar() ;
+            Linea.ValueMember = "Id";
+            Linea.DisplayMember = "Nombre";
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (!txtId.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.HabilitarBotones();
+                this.Habilitar(true);
+            }
+            else
+            {
+                this.MensajeError("Debe seleccionar primero un registro a editar desde la pestaña Listado");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.HabilitarBotones();
+            this.Limpiar();
+            this.Habilitar(false);
+        }
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListado.Columns["ELiminar"].Index)
+            {
+                DataGridViewCheckBoxCell checkBox1 = (DataGridViewCheckBoxCell)dataListado.Rows[e.RowIndex].Cells["ELiminar"];
+                checkBox1.Value = !Convert.ToBoolean(checkBox1.Value);
+            }
+        }
+        private void dataListado_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtId.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Id"].Value);
+            this.txtNombre.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
+            this.txtDescripcion.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Descripcion"].Value);
+            this.Linea.SelectedValue = Convert.ToString(this.dataListado.CurrentRow.Cells["Linea"].Value);
+            this.Almacen.SelectedValue = Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value);
+            this.txtRequerido.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Requerido"].Value);
+
+            this.txtMin.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Minimo"].Value);
+            this.txtS.Text = Convert.ToString(this.dataListado.CurrentRow.Cells["Stock"].Value);
+            
+            this.tabControl1.SelectedIndex = 1;
+        }
+
+        private void checkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEliminar.Checked)
+            {
+                this.dataListado.Columns[0].Visible = true;
+            }
+            else
+            {
+                this.dataListado.Columns[0].Visible = false;
+            }
+        }
+
     }
 }

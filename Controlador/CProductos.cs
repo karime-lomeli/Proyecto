@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Controlador
            int requerido, int minimo, int stock,string fecha)
         {
             ADProductos Objeto = new ADProductos();
+            Objeto.id = id;
             Objeto.nombre = nombre;
             Objeto.descripcion = descripcion;
             Objeto.almacen = almacen;
@@ -37,6 +39,10 @@ namespace Controlador
             Objeto.stock = stock;
             Objeto.fecha = fecha;
             return Objeto.Editar(Objeto);
+        }
+        public static DataTable Mostrar()
+        {
+            return new ADProductos().mostrar();
         }
     }
 }
