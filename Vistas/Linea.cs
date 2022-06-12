@@ -101,10 +101,10 @@ namespace Vistas
 
         private void Linea_Load(object sender, EventArgs e)
         {
-            this.Top = 0;
-            this.Left = 177;
 
-           this.Mostrar();
+            this.Top = 8;
+            this.Left = 135;
+            this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
         }
@@ -396,6 +396,21 @@ namespace Vistas
             {
                 this.dataAlmacen.DataSource = CLineaAlmacen.BuscarAlmacen(this.BuscarAl.Text.ToUpper());
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -77,11 +77,14 @@ namespace Vistas
             // lab
             // 
             this.lab.AutoSize = true;
-            this.lab.Location = new System.Drawing.Point(381, 44);
+            this.lab.Font = new System.Drawing.Font("Century Gothic", 28.2F);
+            this.lab.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lab.Location = new System.Drawing.Point(329, 9);
+            this.lab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lab.Name = "lab";
-            this.lab.Size = new System.Drawing.Size(106, 13);
+            this.lab.Size = new System.Drawing.Size(435, 57);
             this.lab.TabIndex = 0;
-            this.lab.Text = "Líneas y Almacenes.";
+            this.lab.Text = "LÍNEA Y ALMACÉN";
             // 
             // tabControl1
             // 
@@ -89,10 +92,11 @@ namespace Vistas
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(2, 148);
+            this.tabControl1.Location = new System.Drawing.Point(3, 85);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(820, 318);
+            this.tabControl1.Size = new System.Drawing.Size(1093, 488);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -103,21 +107,24 @@ namespace Vistas
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.labelNoParte);
             this.tabPage1.Controls.Add(this.txtBuscar);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(812, 292);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1085, 459);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado Linea";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // checkEliminar
             // 
             this.checkEliminar.AutoSize = true;
             this.checkEliminar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkEliminar.Location = new System.Drawing.Point(3, 63);
+            this.checkEliminar.Location = new System.Drawing.Point(561, 97);
+            this.checkEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkEliminar.Name = "checkEliminar";
-            this.checkEliminar.Size = new System.Drawing.Size(62, 17);
+            this.checkEliminar.Size = new System.Drawing.Size(77, 20);
             this.checkEliminar.TabIndex = 17;
             this.checkEliminar.Text = "Eliminar";
             this.checkEliminar.UseVisualStyleBackColor = true;
@@ -134,12 +141,14 @@ namespace Vistas
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(3, 86);
+            this.dataListado.Location = new System.Drawing.Point(0, 144);
+            this.dataListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
+            this.dataListado.RowHeadersWidth = 51;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(809, 210);
+            this.dataListado.Size = new System.Drawing.Size(1079, 311);
             this.dataListado.TabIndex = 16;
             this.dataListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListado_CellContentClick);
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
@@ -147,49 +156,55 @@ namespace Vistas
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnBuscar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBuscar.Location = new System.Drawing.Point(506, 24);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(53, 26);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(87, 28);
+            this.btnBuscar.Size = new System.Drawing.Size(69, 34);
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEliminar.Location = new System.Drawing.Point(670, 28);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(156, 26);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(87, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(69, 34);
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // labelNoParte
             // 
             this.labelNoParte.AutoSize = true;
             this.labelNoParte.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.labelNoParte.Location = new System.Drawing.Point(85, 36);
+            this.labelNoParte.Location = new System.Drawing.Point(55, 98);
+            this.labelNoParte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNoParte.Name = "labelNoParte";
-            this.labelNoParte.Size = new System.Drawing.Size(35, 13);
+            this.labelNoParte.Size = new System.Drawing.Size(40, 16);
             this.labelNoParte.TabIndex = 13;
             this.labelNoParte.Text = "Línea";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(156, 29);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBuscar.Location = new System.Drawing.Point(103, 95);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(325, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(432, 22);
             this.txtBuscar.TabIndex = 12;
             // 
             // tabPage2
@@ -204,37 +219,42 @@ namespace Vistas
             this.tabPage2.Controls.Add(this.txtId);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(812, 292);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1085, 459);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Registro Linea";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click_1);
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(102, 147);
+            this.txtDescripcion.Location = new System.Drawing.Point(148, 256);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(202, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(448, 22);
             this.txtDescripcion.TabIndex = 35;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(38, 154);
+            this.label4.Location = new System.Drawing.Point(63, 265);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(79, 16);
             this.label4.TabIndex = 34;
             this.label4.Text = "Descripción";
             // 
             // btnCancelar
             // 
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancelar.Location = new System.Drawing.Point(683, 203);
+            this.btnCancelar.Location = new System.Drawing.Point(697, 357);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(99, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(132, 34);
             this.btnCancelar.TabIndex = 33;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -242,59 +262,68 @@ namespace Vistas
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEditar.Location = new System.Drawing.Point(683, 156);
+            this.btnEditar.Location = new System.Drawing.Point(164, 33);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(99, 28);
+            this.btnEditar.Size = new System.Drawing.Size(71, 34);
             this.btnEditar.TabIndex = 32;
             this.btnEditar.Text = "E&ditar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnGuardar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGuardar.Location = new System.Drawing.Point(683, 110);
+            this.btnGuardar.Location = new System.Drawing.Point(858, 357);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(99, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(132, 34);
             this.btnGuardar.TabIndex = 31;
             this.btnGuardar.Text = "&Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
+            this.btnNuevo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnNuevo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnNuevo.Location = new System.Drawing.Point(683, 62);
+            this.btnNuevo.Location = new System.Drawing.Point(59, 33);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(99, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(71, 34);
             this.btnNuevo.TabIndex = 30;
             this.btnNuevo.Text = "&Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(102, 97);
+            this.txtNombre.Location = new System.Drawing.Point(148, 194);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(202, 20);
+            this.txtNombre.Size = new System.Drawing.Size(448, 22);
             this.txtNombre.TabIndex = 27;
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(105, 51);
+            this.txtId.Location = new System.Drawing.Point(152, 138);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(103, 20);
+            this.txtId.Size = new System.Drawing.Size(444, 22);
             this.txtId.TabIndex = 26;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(38, 97);
+            this.label3.Location = new System.Drawing.Point(63, 194);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 25;
             this.label3.Text = "Nombre";
             // 
@@ -302,9 +331,10 @@ namespace Vistas
             // 
             this.label2.AutoSize = true;
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(38, 51);
+            this.label2.Location = new System.Drawing.Point(63, 138);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Id Linea";
             // 
@@ -314,40 +344,43 @@ namespace Vistas
             this.tabPage3.Controls.Add(this.BuscarAl);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.dataAlmacen);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(812, 292);
+            this.tabPage3.Size = new System.Drawing.Size(1085, 459);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Listado Almacen";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(564, 18);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(589, 19);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.Size = new System.Drawing.Size(116, 109);
             this.button1.TabIndex = 21;
             this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BuscarAl
             // 
-            this.BuscarAl.Location = new System.Drawing.Point(219, 23);
-            this.BuscarAl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BuscarAl.Location = new System.Drawing.Point(123, 82);
+            this.BuscarAl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BuscarAl.Name = "BuscarAl";
-            this.BuscarAl.Size = new System.Drawing.Size(325, 20);
+            this.BuscarAl.Size = new System.Drawing.Size(432, 22);
             this.BuscarAl.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(165, 30);
+            this.label1.Location = new System.Drawing.Point(51, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(60, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Almacen";
             // 
@@ -362,18 +395,21 @@ namespace Vistas
             this.dataAlmacen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataAlmacen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1});
-            this.dataAlmacen.Location = new System.Drawing.Point(0, 82);
+            this.dataAlmacen.Location = new System.Drawing.Point(0, 147);
+            this.dataAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataAlmacen.MultiSelect = false;
             this.dataAlmacen.Name = "dataAlmacen";
             this.dataAlmacen.ReadOnly = true;
+            this.dataAlmacen.RowHeadersWidth = 51;
             this.dataAlmacen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataAlmacen.Size = new System.Drawing.Size(809, 210);
+            this.dataAlmacen.Size = new System.Drawing.Size(1079, 312);
             this.dataAlmacen.TabIndex = 17;
             this.dataAlmacen.DoubleClick += new System.EventHandler(this.dataAlmacen_DoubleClick);
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.HeaderText = "Eliminar";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
@@ -387,19 +423,22 @@ namespace Vistas
             this.tabPage4.Controls.Add(this.txtAlmacen);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(812, 292);
+            this.tabPage4.Size = new System.Drawing.Size(1085, 459);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Registro Almacen";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // btnCancelarAlmacen
             // 
             this.btnCancelarAlmacen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancelarAlmacen.Location = new System.Drawing.Point(679, 208);
+            this.btnCancelarAlmacen.Location = new System.Drawing.Point(690, 327);
+            this.btnCancelarAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelarAlmacen.Name = "btnCancelarAlmacen";
-            this.btnCancelarAlmacen.Size = new System.Drawing.Size(99, 28);
+            this.btnCancelarAlmacen.Size = new System.Drawing.Size(132, 34);
             this.btnCancelarAlmacen.TabIndex = 41;
             this.btnCancelarAlmacen.Text = "&Cancelar";
             this.btnCancelarAlmacen.UseVisualStyleBackColor = true;
@@ -407,59 +446,68 @@ namespace Vistas
             // 
             // btnEditarAlmacen
             // 
+            this.btnEditarAlmacen.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEditarAlmacen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnEditarAlmacen.Location = new System.Drawing.Point(679, 161);
+            this.btnEditarAlmacen.Location = new System.Drawing.Point(183, 36);
+            this.btnEditarAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditarAlmacen.Name = "btnEditarAlmacen";
-            this.btnEditarAlmacen.Size = new System.Drawing.Size(99, 28);
+            this.btnEditarAlmacen.Size = new System.Drawing.Size(73, 34);
             this.btnEditarAlmacen.TabIndex = 40;
             this.btnEditarAlmacen.Text = "E&ditar";
-            this.btnEditarAlmacen.UseVisualStyleBackColor = true;
+            this.btnEditarAlmacen.UseVisualStyleBackColor = false;
             this.btnEditarAlmacen.Click += new System.EventHandler(this.btnEditarAlmacen_Click);
             // 
             // btnGuardarAlmacen
             // 
+            this.btnGuardarAlmacen.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btnGuardarAlmacen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnGuardarAlmacen.Location = new System.Drawing.Point(679, 115);
+            this.btnGuardarAlmacen.Location = new System.Drawing.Point(859, 327);
+            this.btnGuardarAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardarAlmacen.Name = "btnGuardarAlmacen";
-            this.btnGuardarAlmacen.Size = new System.Drawing.Size(99, 28);
+            this.btnGuardarAlmacen.Size = new System.Drawing.Size(132, 34);
             this.btnGuardarAlmacen.TabIndex = 39;
             this.btnGuardarAlmacen.Text = "&Guardar";
-            this.btnGuardarAlmacen.UseVisualStyleBackColor = true;
+            this.btnGuardarAlmacen.UseVisualStyleBackColor = false;
             this.btnGuardarAlmacen.Click += new System.EventHandler(this.btnGuardarAlmacen_Click);
             // 
             // btnAlmacenNuevo
             // 
+            this.btnAlmacenNuevo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAlmacenNuevo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAlmacenNuevo.Location = new System.Drawing.Point(679, 67);
+            this.btnAlmacenNuevo.Location = new System.Drawing.Point(82, 36);
+            this.btnAlmacenNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAlmacenNuevo.Name = "btnAlmacenNuevo";
-            this.btnAlmacenNuevo.Size = new System.Drawing.Size(99, 28);
+            this.btnAlmacenNuevo.Size = new System.Drawing.Size(73, 34);
             this.btnAlmacenNuevo.TabIndex = 38;
             this.btnAlmacenNuevo.Text = "&Nuevo";
-            this.btnAlmacenNuevo.UseVisualStyleBackColor = true;
+            this.btnAlmacenNuevo.UseVisualStyleBackColor = false;
             this.btnAlmacenNuevo.Click += new System.EventHandler(this.btnAlmacenNuevo_Click);
             // 
             // txtNombreAlmacen
             // 
-            this.txtNombreAlmacen.Location = new System.Drawing.Point(98, 102);
+            this.txtNombreAlmacen.Location = new System.Drawing.Point(165, 183);
+            this.txtNombreAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombreAlmacen.Name = "txtNombreAlmacen";
-            this.txtNombreAlmacen.Size = new System.Drawing.Size(202, 20);
+            this.txtNombreAlmacen.Size = new System.Drawing.Size(268, 22);
             this.txtNombreAlmacen.TabIndex = 37;
             // 
             // txtAlmacen
             // 
             this.txtAlmacen.Enabled = false;
-            this.txtAlmacen.Location = new System.Drawing.Point(101, 56);
+            this.txtAlmacen.Location = new System.Drawing.Point(169, 126);
+            this.txtAlmacen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAlmacen.Name = "txtAlmacen";
-            this.txtAlmacen.Size = new System.Drawing.Size(103, 20);
+            this.txtAlmacen.Size = new System.Drawing.Size(264, 22);
             this.txtAlmacen.TabIndex = 36;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(34, 102);
+            this.label5.Location = new System.Drawing.Point(79, 183);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 35;
             this.label5.Text = "Nombre";
             // 
@@ -467,22 +515,26 @@ namespace Vistas
             // 
             this.label6.AutoSize = true;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(34, 56);
+            this.label6.Location = new System.Drawing.Point(79, 126);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.Size = new System.Drawing.Size(76, 16);
             this.label6.TabIndex = 34;
             this.label6.Text = "ID Almacen";
             // 
             // Linea
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 465);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.ClientSize = new System.Drawing.Size(1097, 589);
             this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.lab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Linea";
+            this.Text = "LINEA Y ALMACÉN";
             this.Load += new System.EventHandler(this.Linea_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
