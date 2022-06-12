@@ -21,7 +21,7 @@ namespace Controlador
         public static string Editar(string id,string nombre,string descripcion)
         {
             ADLinea Objeto = new ADLinea();
-            Objeto.id = id;
+            Objeto.idLinea= id;
             Objeto.Nombre = nombre;
             Objeto.Descripcion = descripcion;
             return Objeto.Editar(Objeto);
@@ -34,7 +34,7 @@ namespace Controlador
         public static string Eliminar(string Id)
         {
             ADLinea Objeto = new ADLinea();
-            Objeto.id = Id;
+            Objeto.idLinea = Id;
             return Objeto.Eliminar(Objeto);
         }
     }

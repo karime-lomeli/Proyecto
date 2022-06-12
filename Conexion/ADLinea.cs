@@ -24,7 +24,7 @@ namespace Conexion
         private string _Descripcion;
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
 
-        public string id
+        public string idLinea
         {
             get
             {
@@ -64,8 +64,8 @@ namespace Conexion
         }
         public string Insertar(ADLinea Objeto)
         {
-            var Us = db.GetCollection<ADLinea>("LineaProductos");
-            Us.Insert(Objeto);
+            var Linea = db.GetCollection<ADLinea>("LineaProductos");
+            Linea.Insert(Objeto);
 
             return "OK";
         }
@@ -74,7 +74,7 @@ namespace Conexion
             var Linea = db.GetCollection<ADLinea>("LineaProductos");
             var query = new QueryDocument
             {
-                {"_id",ObjectId.Parse(Objeto.id) }
+                {"_id",ObjectId.Parse(Objeto.idLinea) }
             };
             var update = new UpdateDocument
             {
@@ -99,7 +99,7 @@ namespace Conexion
             Resultado.Columns.Add("Descripcion");
             for (int i = 0; i < lineas.Count; i++)
             {
-                Resultado.Rows.Add(lineas[i].id,
+                Resultado.Rows.Add(lineas[i].idLinea,
                     lineas[i].Nombre,
                     lineas[i].Descripcion);
             }
@@ -109,8 +109,10 @@ namespace Conexion
         public string Eliminar(ADLinea Objeto)
         {
             var Linea = db.GetCollection<ADLinea>("LineaProductos");
-             var query = Query.EQ("id", Objeto.id.ToString());
-            
+            var query = new QueryDocument
+            {
+                {"_id",ObjectId.Parse(Objeto.idLinea) }
+            };
             Linea.Remove(query);
 
             return "OK";
