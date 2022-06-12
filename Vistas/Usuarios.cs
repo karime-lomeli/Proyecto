@@ -94,9 +94,8 @@ namespace Vistas
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
-            this.Top = 0;
-            this.Left = 177;
-
+            this.Top = 8;
+            this.Left = 135;
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
@@ -287,6 +286,11 @@ namespace Vistas
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

@@ -21,6 +21,7 @@ namespace Vistas
         {
             InitializeComponent();
             this.LlenarLinea();
+            this.LlenarAlmacen();
         }
         public static Productos GetInstancia()
         {
@@ -46,8 +47,8 @@ namespace Vistas
        
         private void Productos_Load(object sender, EventArgs e)
         {
-            this.Top = 0;
-            this.Left = 177;
+            this.Top = 8;
+            this.Left = 135;
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
@@ -146,7 +147,7 @@ namespace Vistas
                         respuesta = CProductos.Editar(this.txtId.Text,
                             this.txtNombre.Text.Trim().ToUpper(),
                             this.txtDescripcion.Text.Trim().ToUpper(),
-                            "Hola",
+                            this.Almacen.Text.Trim().ToUpper(),
                             this.Linea.Text.Trim().ToUpper(),
                             Convert.ToInt32(this.txtRequerido.Text),
                             Convert.ToInt32(this.txtMin.Text),
@@ -199,7 +200,13 @@ namespace Vistas
             Linea.ValueMember = "Id";
             Linea.DisplayMember = "Nombre";
         }
-
+        private void LlenarAlmacen()
+        {
+            CLineaAlmacen Objeto = new CLineaAlmacen();
+            Almacen.DataSource = Objeto.MostrarAlmacen();
+           Almacen.ValueMember = "Id";
+            Almacen.DisplayMember = "Nombre";
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (!txtId.Text.Equals(""))
@@ -311,6 +318,21 @@ namespace Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Buscar(txtBuscar.Text);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNoParte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

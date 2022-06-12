@@ -30,6 +30,7 @@ namespace Vistas
         {
             Salidas Objeto = new Salidas();
             Objeto.MdiParent = this;
+            Objeto.IdUsuario = this.IdUsuario;
             Objeto.Show();
         }
 
