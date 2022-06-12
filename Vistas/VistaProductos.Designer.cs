@@ -32,6 +32,7 @@ namespace Vistas
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.labelTotal = new System.Windows.Forms.Label();
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtBusquedaEdm = new System.Windows.Forms.TextBox();
@@ -47,26 +48,27 @@ namespace Vistas
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(7, 63);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Location = new System.Drawing.Point(12, 79);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(657, 326);
+            this.tabControl1.Size = new System.Drawing.Size(596, 307);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.checkBox1);
+            this.tabPage1.Controls.Add(this.labelTotal);
             this.tabPage1.Controls.Add(this.dataListado);
             this.tabPage1.Controls.Add(this.txtBusquedaEdm);
             this.tabPage1.Controls.Add(this.bBuscar);
             this.tabPage1.Controls.Add(this.labelNoParte);
             this.tabPage1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(649, 294);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(588, 278);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -74,13 +76,21 @@ namespace Vistas
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(111, 68);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Location = new System.Drawing.Point(7, 90);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 23);
+            this.checkBox1.Size = new System.Drawing.Size(67, 20);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Eliminar";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Location = new System.Drawing.Point(468, 259);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(41, 16);
+            this.labelTotal.TabIndex = 5;
+            this.labelTotal.Text = "label4";
             // 
             // dataListado
             // 
@@ -92,76 +102,68 @@ namespace Vistas
             this.dataListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar});
-            this.dataListado.Location = new System.Drawing.Point(8, 106);
-            this.dataListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataListado.Location = new System.Drawing.Point(7, 113);
             this.dataListado.MultiSelect = false;
             this.dataListado.Name = "dataListado";
             this.dataListado.ReadOnly = true;
-            this.dataListado.RowHeadersWidth = 51;
             this.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListado.Size = new System.Drawing.Size(635, 187);
+            this.dataListado.Size = new System.Drawing.Size(575, 143);
             this.dataListado.TabIndex = 4;
+            
             this.dataListado.DoubleClick += new System.EventHandler(this.dataListado_DoubleClick);
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 6;
+            this.Eliminar.Width = 5;
             // 
             // txtBusquedaEdm
             // 
-            this.txtBusquedaEdm.Location = new System.Drawing.Point(111, 29);
-            this.txtBusquedaEdm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBusquedaEdm.Location = new System.Drawing.Point(141, 30);
+            this.txtBusquedaEdm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBusquedaEdm.Name = "txtBusquedaEdm";
-            this.txtBusquedaEdm.Size = new System.Drawing.Size(293, 24);
+            this.txtBusquedaEdm.Size = new System.Drawing.Size(221, 21);
             this.txtBusquedaEdm.TabIndex = 3;
             // 
             // bBuscar
             // 
-            this.bBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.bBuscar.Location = new System.Drawing.Point(436, 10);
-            this.bBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bBuscar.Location = new System.Drawing.Point(368, 27);
+            this.bBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(116, 87);
+            this.bBuscar.Size = new System.Drawing.Size(87, 28);
             this.bBuscar.TabIndex = 1;
             this.bBuscar.Text = "Buscar";
-            this.bBuscar.UseVisualStyleBackColor = false;
+            this.bBuscar.UseVisualStyleBackColor = true;
             this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // labelNoParte
             // 
             this.labelNoParte.AutoSize = true;
-            this.labelNoParte.Location = new System.Drawing.Point(19, 33);
-            this.labelNoParte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNoParte.Location = new System.Drawing.Point(72, 33);
             this.labelNoParte.Name = "labelNoParte";
-            this.labelNoParte.Size = new System.Drawing.Size(77, 19);
+            this.labelNoParte.Size = new System.Drawing.Size(62, 16);
             this.labelNoParte.TabIndex = 0;
             this.labelNoParte.Text = "Productos";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 28.2F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(180, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(277, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 57);
+            this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 7;
-            this.label1.Text = "PRODUCTOS";
+            this.label1.Text = "Productos";
             // 
             // VistaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(668, 394);
+            this.ClientSize = new System.Drawing.Size(623, 390);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "VistaProductos";
@@ -181,6 +183,7 @@ namespace Vistas
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.DataGridView dataListado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
         private System.Windows.Forms.TextBox txtBusquedaEdm;

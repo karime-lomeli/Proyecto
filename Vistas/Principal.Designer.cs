@@ -46,7 +46,6 @@ namespace Vistas
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.button8 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.panel4.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -244,22 +243,11 @@ namespace Vistas
             this.button8.Text = "--";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1158, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "by LiLi";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 712);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.panel4);
@@ -302,6 +290,5 @@ namespace Vistas
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label1;
     }
 }
