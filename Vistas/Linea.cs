@@ -24,6 +24,7 @@ namespace Vistas
         {
             CLineaAlmacen Objeto = new CLineaAlmacen();
             this.dataListado.DataSource = Objeto.Mostrar();
+            this.dataAlmacen.DataSource = Objeto.MostrarAlmacen();
             this.OcultarColumnas();
         }
         private void MensajeOk(string mensaje)
@@ -41,17 +42,23 @@ namespace Vistas
             this.txtId.Text = string.Empty;
             this.txtNombre.Text = string.Empty;
             this.txtDescripcion.Text = string.Empty;
+            this.txtAlmacen.Text = string.Empty;
+            this.txtNombreAlmacen.Text = string.Empty;
         }
         private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
             this.dataListado.Columns["Id"].Visible = false;
+            this.dataAlmacen.Columns[0].Visible = false;
+            this.dataAlmacen.Columns["Id"].Visible = false;
         }
         private void Habilitar(bool valor)
         {
             this.txtId.ReadOnly = !valor;
             this.txtNombre.ReadOnly = !valor;
             this.txtDescripcion.ReadOnly = !valor;
+            this.txtAlmacen.ReadOnly = !valor;
+            this.txtNombreAlmacen.ReadOnly = !valor;
         }
         private void HabilitarBotones()
         {
@@ -62,6 +69,10 @@ namespace Vistas
                 this.btnGuardar.Enabled = true;
                 this.btnEditar.Enabled = false;
                 this.btnCancelar.Enabled = true;
+                this.btnAlmacenNuevo.Enabled = false;
+                this.btnGuardarAlmacen.Enabled = true;
+                this.btnEditarAlmacen.Enabled = false;
+                this.btnCancelarAlmacen.Enabled = true;
             }
             else
             {
@@ -70,6 +81,10 @@ namespace Vistas
                 this.btnGuardar.Enabled = false;
                 this.btnEditar.Enabled = true;
                 this.btnCancelar.Enabled = false;
+                this.btnAlmacenNuevo.Enabled = true;
+                this.btnGuardarAlmacen.Enabled = false;
+                this.btnEditarAlmacen.Enabled = true;
+                this.btnCancelarAlmacen.Enabled = false;
             }
 
         }
@@ -269,6 +284,118 @@ namespace Vistas
                 this.dataListado.DataSource = CLineaAlmacen.BuscarLinea(this.txtBuscar.Text.ToUpper());
             }
         }
+
+        private void btnAlmacenNuevo_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = true;
+            this.IsEditar = false;
+            this.Limpiar();
+            this.HabilitarBotones();
+            this.Habilitar(true);
+            this.txtNombreAlmacen.Focus();
+        }
+
+        private void btnGuardarAlmacen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string respuesta = "";
+                if (this.txtNombreAlmacen.Text == string.Empty )
+                {
+                    MensajeError("Faltan datos");
+                }
+                else
+                {
+                    if (this.IsNuevo)
+                    {
+                        respuesta = CLineaAlmacen.InsertarAlmacen(this.txtNombreAlmacen.Text.Trim().ToUpper());
+                          
+                    }
+                    else
+                    {
+                        respuesta = CLineaAlmacen.EditarAlmacen(this.txtAlmacen.Text,
+                            this.txtNombreAlmacen.Text.Trim().ToUpper());
+
+                    }
+                    if (respuesta.Equals("OK"))
+                    {
+                        if (this.IsNuevo)
+                        {
+                            this.MensajeOk("El Usuario se ingreso correctamente");
+
+                        }
+                        else
+                        {
+                            this.MensajeOk("El usuario se actualizo de correctamente");
+                        }
+
+                    }
+
+                    else
+                    {
+                        this.MensajeError(respuesta);
+                    }
+                    this.IsNuevo = false;
+                    this.IsEditar = false;
+                    this.HabilitarBotones();
+                    this.Limpiar();
+                    this.Mostrar();
+
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnEditarAlmacen_Click(object sender, EventArgs e)
+        {
+            if (!txtAlmacen.Text.Equals(""))
+            {
+                this.IsEditar = true;
+                this.HabilitarBotones();
+                this.Habilitar(true);
+            }
+            else
+            {
+                this.MensajeError("Debe seleccionar primero un registro a editar desde la pestaña Listado");
+            }
+        }
+
         
+     
+        private void dataAlmacen_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtAlmacen.Text = Convert.ToString(this.dataAlmacen.CurrentRow.Cells["Id"].Value);
+            this.txtNombreAlmacen.Text = Convert.ToString(this.dataAlmacen.CurrentRow.Cells["Nombre"].Value);
+            this.tabControl1.SelectedIndex = 3;
+        }
+
+        
+
+        private void btnCancelarAlmacen_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.HabilitarBotones();
+            this.Limpiar();
+            this.Habilitar(false);
+            this.txtAlmacen.Text = string.Empty;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.BuscarAl.Text == string.Empty)
+            {
+                MensajeError("Ingrese texto");
+            }
+            else
+            {
+                this.dataAlmacen.DataSource = CLineaAlmacen.BuscarAlmacen(this.BuscarAl.Text.ToUpper());
+            }
+        }
     }
 }

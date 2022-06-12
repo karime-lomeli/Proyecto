@@ -162,7 +162,6 @@ namespace Conexion
         public DataTable mostrar()
         {
             List<ADProductos> productos = db.GetCollection<ADProductos>("Productos").FindAll().ToList();
-            //var query = from item in usuarios.AsEnumerable() select item;
             DataTable Resultado = new DataTable("producto");
             Resultado.Columns.Add("Id");
             Resultado.Columns.Add("Nombre");
@@ -209,10 +208,6 @@ namespace Conexion
             List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
 
             DataTable Resultado = new DataTable("producto");
-
-
-
-
 
             Resultado.Columns.Add("Id");
             Resultado.Columns.Add("Nombre");

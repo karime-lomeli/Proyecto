@@ -43,5 +43,36 @@ namespace Controlador
 
             return Objeto.buscar(texto);
         }
+        public static string InsertarAlmacen(string nombre)
+        {
+            ADAlmacen Objeto = new ADAlmacen();
+            Objeto.Nombre = nombre;
+
+            return Objeto.Insertar(Objeto);
+        }
+        public static string EditarAlmacen(string id, string nombre)
+        {
+            ADAlmacen Objeto = new ADAlmacen();
+            Objeto.idAlmacen = id;
+            Objeto.Nombre = nombre;
+            return Objeto.Editar(Objeto);
+        }
+        public DataTable MostrarAlmacen()
+        {
+
+            return new ADAlmacen().mostrar();
+        }
+        public static string EliminarAlmacen(string Id)
+        {
+            ADAlmacen Objeto = new ADAlmacen();
+            Objeto.idAlmacen = Id;
+            return Objeto.Eliminar(Objeto);
+        }
+        public static DataTable BuscarAlmacen(string texto)
+        {
+            ADAlmacen Objeto = new ADAlmacen();
+
+            return Objeto.buscar(texto);
+        }
     }
 }

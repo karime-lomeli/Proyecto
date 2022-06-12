@@ -50,10 +50,28 @@ namespace Vistas
             this.txtId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BuscarAl = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataAlmacen = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnCancelarAlmacen = new System.Windows.Forms.Button();
+            this.btnEditarAlmacen = new System.Windows.Forms.Button();
+            this.btnGuardarAlmacen = new System.Windows.Forms.Button();
+            this.btnAlmacenNuevo = new System.Windows.Forms.Button();
+            this.txtNombreAlmacen = new System.Windows.Forms.TextBox();
+            this.txtAlmacen = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataAlmacen)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lab
@@ -69,6 +87,8 @@ namespace Vistas
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(2, 148);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -88,7 +108,7 @@ namespace Vistas
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(812, 292);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Listado";
+            this.tabPage1.Text = "Listado Linea";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // checkEliminar
@@ -189,7 +209,7 @@ namespace Vistas
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(812, 292);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Registro";
+            this.tabPage2.Text = "Registro Linea";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtDescripcion
@@ -288,6 +308,171 @@ namespace Vistas
             this.label2.TabIndex = 24;
             this.label2.Text = "Id Linea";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.BuscarAl);
+            this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.dataAlmacen);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(812, 292);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Listado Almacen";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(564, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BuscarAl
+            // 
+            this.BuscarAl.Location = new System.Drawing.Point(219, 23);
+            this.BuscarAl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BuscarAl.Name = "BuscarAl";
+            this.BuscarAl.Size = new System.Drawing.Size(325, 20);
+            this.BuscarAl.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(165, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Almacen";
+            // 
+            // dataAlmacen
+            // 
+            this.dataAlmacen.AllowUserToAddRows = false;
+            this.dataAlmacen.AllowUserToDeleteRows = false;
+            this.dataAlmacen.AllowUserToOrderColumns = true;
+            this.dataAlmacen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataAlmacen.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataAlmacen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataAlmacen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataAlmacen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1});
+            this.dataAlmacen.Location = new System.Drawing.Point(0, 82);
+            this.dataAlmacen.MultiSelect = false;
+            this.dataAlmacen.Name = "dataAlmacen";
+            this.dataAlmacen.ReadOnly = true;
+            this.dataAlmacen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataAlmacen.Size = new System.Drawing.Size(809, 210);
+            this.dataAlmacen.TabIndex = 17;
+            this.dataAlmacen.DoubleClick += new System.EventHandler(this.dataAlmacen_DoubleClick);
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Eliminar";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.btnCancelarAlmacen);
+            this.tabPage4.Controls.Add(this.btnEditarAlmacen);
+            this.tabPage4.Controls.Add(this.btnGuardarAlmacen);
+            this.tabPage4.Controls.Add(this.btnAlmacenNuevo);
+            this.tabPage4.Controls.Add(this.txtNombreAlmacen);
+            this.tabPage4.Controls.Add(this.txtAlmacen);
+            this.tabPage4.Controls.Add(this.label5);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(812, 292);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Registro Almacen";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelarAlmacen
+            // 
+            this.btnCancelarAlmacen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCancelarAlmacen.Location = new System.Drawing.Point(679, 208);
+            this.btnCancelarAlmacen.Name = "btnCancelarAlmacen";
+            this.btnCancelarAlmacen.Size = new System.Drawing.Size(99, 28);
+            this.btnCancelarAlmacen.TabIndex = 41;
+            this.btnCancelarAlmacen.Text = "&Cancelar";
+            this.btnCancelarAlmacen.UseVisualStyleBackColor = true;
+            this.btnCancelarAlmacen.Click += new System.EventHandler(this.btnCancelarAlmacen_Click);
+            // 
+            // btnEditarAlmacen
+            // 
+            this.btnEditarAlmacen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnEditarAlmacen.Location = new System.Drawing.Point(679, 161);
+            this.btnEditarAlmacen.Name = "btnEditarAlmacen";
+            this.btnEditarAlmacen.Size = new System.Drawing.Size(99, 28);
+            this.btnEditarAlmacen.TabIndex = 40;
+            this.btnEditarAlmacen.Text = "E&ditar";
+            this.btnEditarAlmacen.UseVisualStyleBackColor = true;
+            this.btnEditarAlmacen.Click += new System.EventHandler(this.btnEditarAlmacen_Click);
+            // 
+            // btnGuardarAlmacen
+            // 
+            this.btnGuardarAlmacen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGuardarAlmacen.Location = new System.Drawing.Point(679, 115);
+            this.btnGuardarAlmacen.Name = "btnGuardarAlmacen";
+            this.btnGuardarAlmacen.Size = new System.Drawing.Size(99, 28);
+            this.btnGuardarAlmacen.TabIndex = 39;
+            this.btnGuardarAlmacen.Text = "&Guardar";
+            this.btnGuardarAlmacen.UseVisualStyleBackColor = true;
+            this.btnGuardarAlmacen.Click += new System.EventHandler(this.btnGuardarAlmacen_Click);
+            // 
+            // btnAlmacenNuevo
+            // 
+            this.btnAlmacenNuevo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAlmacenNuevo.Location = new System.Drawing.Point(679, 67);
+            this.btnAlmacenNuevo.Name = "btnAlmacenNuevo";
+            this.btnAlmacenNuevo.Size = new System.Drawing.Size(99, 28);
+            this.btnAlmacenNuevo.TabIndex = 38;
+            this.btnAlmacenNuevo.Text = "&Nuevo";
+            this.btnAlmacenNuevo.UseVisualStyleBackColor = true;
+            this.btnAlmacenNuevo.Click += new System.EventHandler(this.btnAlmacenNuevo_Click);
+            // 
+            // txtNombreAlmacen
+            // 
+            this.txtNombreAlmacen.Location = new System.Drawing.Point(98, 102);
+            this.txtNombreAlmacen.Name = "txtNombreAlmacen";
+            this.txtNombreAlmacen.Size = new System.Drawing.Size(202, 20);
+            this.txtNombreAlmacen.TabIndex = 37;
+            // 
+            // txtAlmacen
+            // 
+            this.txtAlmacen.Enabled = false;
+            this.txtAlmacen.Location = new System.Drawing.Point(101, 56);
+            this.txtAlmacen.Name = "txtAlmacen";
+            this.txtAlmacen.Size = new System.Drawing.Size(103, 20);
+            this.txtAlmacen.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(34, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Nombre";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(34, 56);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "ID Almacen";
+            // 
             // Linea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +490,11 @@ namespace Vistas
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataAlmacen)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +523,20 @@ namespace Vistas
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox BuscarAl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataAlmacen;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button btnCancelarAlmacen;
+        private System.Windows.Forms.Button btnEditarAlmacen;
+        private System.Windows.Forms.Button btnGuardarAlmacen;
+        private System.Windows.Forms.Button btnAlmacenNuevo;
+        private System.Windows.Forms.TextBox txtNombreAlmacen;
+        private System.Windows.Forms.TextBox txtAlmacen;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

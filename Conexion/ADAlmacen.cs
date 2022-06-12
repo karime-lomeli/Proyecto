@@ -17,86 +17,109 @@ namespace Conexion
 
     public class ADAlmacen
     {
+
+
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id;
-        public string Nombre;
+        private string _IdAlmacen;
+        private string _Nombre;
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
 
-        public string id
+        public string idAlmacen
         {
             get
             {
-                return Id;
+                return _IdAlmacen;
             }
+
             set
             {
-                Id = value;
+                _IdAlmacen = value;
             }
         }
-        public string nombre
+
+        public string Nombre
         {
             get
             {
-                return Nombre;
+                return _Nombre;
             }
+
             set
             {
-                Nombre = value;
+                _Nombre = value;
             }
         }
-        public string Insertar(ADAlmacen objeto)
+
+        
+        public string Insertar(ADAlmacen Objeto)
         {
-            var Al = db.GetCollection<ADUsuario>("Almacen");
-            Al.Insert(objeto);
+            var Almacen = db.GetCollection<ADAlmacen>("Almacen");
+            Almacen.Insert(Objeto);
+
             return "OK";
         }
         public string Editar(ADAlmacen Objeto)
         {
-            var Al = db.GetCollection<ADUsuario>("Almacen");
+            var Almacen = db.GetCollection<ADAlmacen>("Almacen");
             var query = new QueryDocument
             {
-                {"_id",ObjectId.Parse(Objeto.Id) }
+                {"_id",ObjectId.Parse(Objeto.idAlmacen) }
             };
             var update = new UpdateDocument
             {
                 {
                     "$set", new BsonDocument
                     {
-                        {"Nombre", Objeto.Nombre }
+                        {"Nombre", Objeto.Nombre },
 
                     }
                 }
             };
-            Al.Update(query, update);
+            Almacen.Update(query, update);
             return "OK";
         }
         public DataTable mostrar()
         {
-            List<ADAlmacen> almacenes = db.GetCollection<ADAlmacen>("Almacen").FindAll().ToList();
-            //var query = from item in usuarios.AsEnumerable() select item;
+            List<ADAlmacen> almacenes= db.GetCollection<ADAlmacen>("Almacen").FindAll().ToList();
             DataTable Resultado = new DataTable("almacen");
             Resultado.Columns.Add("Id");
             Resultado.Columns.Add("Nombre");
             for (int i = 0; i < almacenes.Count; i++)
             {
-                Resultado.Rows.Add(almacenes[i].Id,
-                    almacenes[i].nombre);
+                Resultado.Rows.Add(almacenes[i].idAlmacen,
+                    almacenes[i].Nombre);
             }
-
-
-
-            // //
-
             return Resultado;
         }
         public string Eliminar(ADAlmacen Objeto)
         {
-            var almacen = db.GetCollection<ADLinea>("Almacen");
-            var query = Query.EQ("_id", ObjectId.Parse(Objeto.Id));
-            almacen.Remove(query);
+            var Almacen = db.GetCollection<ADAlmacen>("Almacen");
+            var query = new QueryDocument
+            {
+                {"_id",ObjectId.Parse(Objeto.idAlmacen) }
+            };
+            Almacen.Remove(query);
 
             return "OK";
+
+        }
+        public DataTable buscar(string texto)
+        {
+            MongoCollection Almacen = db.GetCollection<ADAlmacen>("Almacen");
+            var filtro = Query<ADAlmacen>.EQ(cl => cl.Nombre, texto);
+            List<ADAlmacen> almacenes = Almacen.FindAs<ADAlmacen>(filtro).ToList();
+
+            DataTable Resultado = new DataTable("almacen");
+
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("Nombre");
+            for (int i = 0; i < almacenes.Count; i++)
+            {
+                Resultado.Rows.Add(almacenes[i].idAlmacen,
+                   almacenes[i].Nombre);
+            }
+            return Resultado;
         }
     }
 }
