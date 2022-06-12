@@ -120,6 +120,25 @@ namespace Conexion
             return "OK";
 
         }
+        public DataTable buscar(string texto)
+        {
+            MongoCollection Linea = db.GetCollection<ADLinea>("LineaProductos");
+            var filtro = Query<ADLinea>.EQ(cl => cl.Nombre, texto);
+            List<ADLinea> lineas = Linea.FindAs<ADLinea>(filtro).ToList();
+
+            DataTable Resultado = new DataTable("usuario");
+
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("Nombre");
+            Resultado.Columns.Add("Descripcion");
+            for (int i = 0; i < lineas.Count; i++)
+            {
+                Resultado.Rows.Add(lineas[i].idLinea,
+                   lineas[i].Nombre,
+                   lineas[i].Descripcion);
+            }
+            return Resultado;
+        }
     }
 
 }

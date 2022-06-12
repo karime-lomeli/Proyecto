@@ -37,5 +37,11 @@ namespace Controlador
             Objeto.idLinea = Id;
             return Objeto.Eliminar(Objeto);
         }
+        public static DataTable BuscarLinea(string texto)
+        {
+            ADLinea Objeto = new ADLinea();
+
+            return Objeto.buscar(texto);
+        }
     }
 }

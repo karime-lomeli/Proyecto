@@ -24,7 +24,7 @@ namespace Vistas
         {
             CLineaAlmacen Objeto = new CLineaAlmacen();
             this.dataListado.DataSource = Objeto.Mostrar();
-            //this.OcultarColumnas();
+            this.OcultarColumnas();
         }
         private void MensajeOk(string mensaje)
         {
@@ -210,7 +210,7 @@ namespace Vistas
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Se Eliminaran los usuarios seleccionados", "Dashwork", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                Opcion = MessageBox.Show("Se Eliminaran las líneas seleccionadas", "Dashwork", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Opcion == DialogResult.OK)
 
@@ -228,7 +228,7 @@ namespace Vistas
 
                             if (Respuesta.Equals("OK"))
                             {
-                                this.MensajeOk("Usuario eliminado Correctamente");
+                                this.MensajeOk("Línea eliminada correctamente");
                             }
                             else
                             {
@@ -247,5 +247,28 @@ namespace Vistas
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.IsNuevo = false;
+            this.IsEditar = false;
+            this.HabilitarBotones();
+            this.Limpiar();
+            this.Habilitar(false);
+            this.txtId.Text = string.Empty;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (this.txtBuscar.Text == string.Empty)
+            {
+                MensajeError("Ingrese texto");
+            }
+            else
+            {
+                this.dataListado.DataSource = CLineaAlmacen.BuscarLinea(this.txtBuscar.Text.ToUpper());
+            }
+        }
+        
     }
 }
