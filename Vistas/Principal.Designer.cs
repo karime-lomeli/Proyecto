@@ -62,7 +62,7 @@ namespace Vistas
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1223, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1285, 28);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -155,7 +155,7 @@ namespace Vistas
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1191, 0);
+            this.button7.Location = new System.Drawing.Point(1253, 0);
             this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(32, 24);
@@ -194,10 +194,10 @@ namespace Vistas
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 694);
+            this.statusStrip.Location = new System.Drawing.Point(0, 690);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1223, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1285, 22);
             this.statusStrip.TabIndex = 28;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -211,13 +211,13 @@ namespace Vistas
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1223, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1285, 24);
             this.menuStrip1.TabIndex = 30;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(1161, 0);
+            this.button8.Location = new System.Drawing.Point(1222, 0);
             this.button8.Margin = new System.Windows.Forms.Padding(4);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(32, 24);
@@ -229,7 +229,7 @@ namespace Vistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 716);
+            this.ClientSize = new System.Drawing.Size(1285, 712);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.panel4);
