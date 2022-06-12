@@ -93,7 +93,7 @@ namespace Vistas
             this.txtCorreo.Location = new System.Drawing.Point(481, 251);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(479, 27);
+            this.txtCorreo.Size = new System.Drawing.Size(560, 27);
             this.txtCorreo.TabIndex = 4;
             // 
             // txtPass
@@ -103,7 +103,7 @@ namespace Vistas
             this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(479, 27);
+            this.txtPass.Size = new System.Drawing.Size(560, 27);
             this.txtPass.TabIndex = 5;
             // 
             // button1
