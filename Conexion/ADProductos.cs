@@ -202,5 +202,38 @@ namespace Conexion
             return "OK";
 
         }
+        public DataTable Buscar(string texto)
+        {
+            MongoCollection Producto = db.GetCollection<ADProductos>("Productos");
+            var filtro = Query<ADProductos>.EQ(cl => cl.nombre, texto);
+            List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
+
+            DataTable Resultado = new DataTable("producto");
+
+
+
+
+
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("Nombre");
+            Resultado.Columns.Add("Descripcion");
+            Resultado.Columns.Add("Linea");
+            Resultado.Columns.Add("Almacen");
+            Resultado.Columns.Add("Requerido");
+            Resultado.Columns.Add("Minimo");
+            Resultado.Columns.Add("Stock");
+            for (int i = 0; i < productos.Count; i++)
+            {
+                Resultado.Rows.Add(productos[i].id,
+                   productos[i].Nombre,
+                   productos[i].Descripcion,
+                   productos[i].Linea,
+                   productos[i].Almacen,
+                   productos[i].Requerido,
+                   productos[i].Minimo,
+                   productos[i].Stock);
+            }
+            return Resultado;
+        }
     }
 }

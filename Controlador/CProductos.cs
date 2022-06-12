@@ -50,5 +50,11 @@ namespace Controlador
             Objeto.id = Id;
             return Objeto.Eliminar(Objeto);
         }
+        public static DataTable Buscar(string texto)
+        {
+            ADProductos Objeto = new ADProductos();
+
+            return Objeto.Buscar(texto);
+        }
     }
 }

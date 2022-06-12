@@ -299,5 +299,18 @@ namespace Vistas
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+        private void Buscar(string texto)
+        {
+            this.dataListado.DataSource = CProductos.Buscar(texto);
+        }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar(txtBuscar.Text);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar(txtBuscar.Text);
+        }
     }
 }
