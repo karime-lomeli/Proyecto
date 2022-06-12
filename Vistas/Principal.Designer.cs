@@ -30,9 +30,9 @@ namespace Vistas
         private void InitializeComponent()
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,14 +66,6 @@ namespace Vistas
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "MenuStrip";
             // 
-            // fileMenu
-            // 
-            this.fileMenu.ForeColor = System.Drawing.Color.White;
-            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(52, 24);
-            this.fileMenu.Text = "&Salir";
-            // 
             // windowsMenu
             // 
             this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,74 +81,100 @@ namespace Vistas
             this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             // 
+            // fileMenu
+            // 
+            this.fileMenu.ForeColor = System.Drawing.Color.White;
+            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.fileMenu.Name = "fileMenu";
+            this.fileMenu.Size = new System.Drawing.Size(52, 24);
+            this.fileMenu.Text = "&Salir";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(21, 27);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 70);
+            this.button1.Size = new System.Drawing.Size(142, 70);
             this.button1.TabIndex = 2;
             this.button1.Text = "Productos";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(31, 127);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(21, 124);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 70);
+            this.button2.Size = new System.Drawing.Size(142, 70);
             this.button2.TabIndex = 3;
             this.button2.Text = "Salidas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(31, 227);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(21, 224);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 70);
+            this.button3.Size = new System.Drawing.Size(142, 70);
             this.button3.TabIndex = 4;
             this.button3.Text = "Línea y Almacén";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(31, 329);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(21, 326);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 70);
+            this.button4.Size = new System.Drawing.Size(142, 70);
             this.button4.TabIndex = 5;
             this.button4.Text = "Usuarios";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(31, 544);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(21, 541);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 70);
+            this.button5.Size = new System.Drawing.Size(142, 70);
             this.button5.TabIndex = 6;
             this.button5.Text = "Reportes";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(31, 435);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.Location = new System.Drawing.Point(21, 432);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 70);
+            this.button6.Size = new System.Drawing.Size(142, 70);
             this.button6.TabIndex = 7;
             this.button6.Text = "Pedidos";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(1253, 0);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(32, 24);
             this.button7.TabIndex = 9;
@@ -177,14 +195,14 @@ namespace Vistas
             this.panel4.Location = new System.Drawing.Point(0, 51);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(176, 638);
+            this.panel4.Size = new System.Drawing.Size(184, 638);
             this.panel4.TabIndex = 27;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(251, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1096, 599);
             this.panel1.TabIndex = 21;
@@ -239,7 +257,7 @@ namespace Vistas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
