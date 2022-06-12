@@ -135,13 +135,13 @@ namespace Vistas
             // 
             // btnReportes
             // 
-            this.button5.Location = new System.Drawing.Point(31, 544);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 70);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Reportes";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnReportes.Location = new System.Drawing.Point(31, 544);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(100, 70);
+            this.btnReportes.TabIndex = 6;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
