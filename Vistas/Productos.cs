@@ -46,8 +46,8 @@ namespace Vistas
        
         private void Productos_Load(object sender, EventArgs e)
         {
-            this.Top = 0;
-            this.Left = 177;
+            this.Top = 8;
+            this.Left = 135;
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();

@@ -435,7 +435,7 @@ namespace Vistas
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(46)))), ((int)(((byte)(67)))));
-            this.ClientSize = new System.Drawing.Size(1097, 590);
+            this.ClientSize = new System.Drawing.Size(1097, 600);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
