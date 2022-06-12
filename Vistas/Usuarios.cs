@@ -285,5 +285,10 @@ namespace Vistas
                 this.dataListado.DataSource = CUsuario.BuscarUsuario(this.txtBuscar.Text.ToUpper());
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
