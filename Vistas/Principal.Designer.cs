@@ -30,9 +30,9 @@ namespace Vistas
         private void InitializeComponent()
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,18 +61,9 @@ namespace Vistas
             this.menuStrip.Location = new System.Drawing.Point(0, 24);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip.Size = new System.Drawing.Size(1285, 28);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // fileMenu
-            // 
-            this.fileMenu.ForeColor = System.Drawing.Color.White;
-            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(52, 24);
-            this.fileMenu.Text = "&Salir";
             // 
             // windowsMenu
             // 
@@ -89,10 +80,18 @@ namespace Vistas
             this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             // 
+            // fileMenu
+            // 
+            this.fileMenu.ForeColor = System.Drawing.Color.White;
+            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.fileMenu.Name = "fileMenu";
+            this.fileMenu.Size = new System.Drawing.Size(52, 24);
+            this.fileMenu.Text = "&Salir";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(31, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 70);
             this.button1.TabIndex = 2;
@@ -103,7 +102,7 @@ namespace Vistas
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(31, 127);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 70);
             this.button2.TabIndex = 3;
@@ -114,7 +113,7 @@ namespace Vistas
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(31, 227);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 70);
             this.button3.TabIndex = 4;
@@ -125,7 +124,7 @@ namespace Vistas
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(31, 329);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 70);
             this.button4.TabIndex = 5;
@@ -136,17 +135,18 @@ namespace Vistas
             // btnReportes
             // 
             this.btnReportes.Location = new System.Drawing.Point(31, 544);
-            this.btnReportes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(100, 70);
             this.btnReportes.TabIndex = 6;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(31, 435);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 70);
             this.button6.TabIndex = 7;
@@ -156,7 +156,7 @@ namespace Vistas
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(1253, 0);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(32, 24);
             this.button7.TabIndex = 9;
@@ -184,7 +184,7 @@ namespace Vistas
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(251, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1096, 599);
             this.panel1.TabIndex = 21;
@@ -239,7 +239,7 @@ namespace Vistas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
