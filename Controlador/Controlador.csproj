@@ -148,6 +148,7 @@
   <ItemGroup>
     <Compile Include="CLineaAlmacen.cs" />
     <Compile Include="CProductos.cs" />
+    <Compile Include="CSalidas.cs" />
     <Compile Include="CUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
