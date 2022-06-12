@@ -21,6 +21,7 @@ namespace Vistas
         {
             InitializeComponent();
             this.LlenarLinea();
+            this.LlenarAlmacen();
         }
         public static Productos GetInstancia()
         {
@@ -146,7 +147,7 @@ namespace Vistas
                         respuesta = CProductos.Editar(this.txtId.Text,
                             this.txtNombre.Text.Trim().ToUpper(),
                             this.txtDescripcion.Text.Trim().ToUpper(),
-                            "Hola",
+                            this.Almacen.Text.Trim().ToUpper(),
                             this.Linea.Text.Trim().ToUpper(),
                             Convert.ToInt32(this.txtRequerido.Text),
                             Convert.ToInt32(this.txtMin.Text),
@@ -199,7 +200,13 @@ namespace Vistas
             Linea.ValueMember = "Id";
             Linea.DisplayMember = "Nombre";
         }
-
+        private void LlenarAlmacen()
+        {
+            CLineaAlmacen Objeto = new CLineaAlmacen();
+            Almacen.DataSource = Objeto.MostrarAlmacen();
+           Almacen.ValueMember = "Id";
+            Almacen.DisplayMember = "Nombre";
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (!txtId.Text.Equals(""))
