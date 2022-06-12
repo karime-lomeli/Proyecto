@@ -224,7 +224,7 @@ namespace Vistas
                         {
                             Id = Convert.ToString(row.Cells[1].Value);
                             Console.WriteLine(Id);
-                            Respuesta = CUsuario.Eliminar(Id);
+                            Respuesta = CLineaAlmacen.Eliminar(Id);
 
                             if (Respuesta.Equals("OK"))
                             {

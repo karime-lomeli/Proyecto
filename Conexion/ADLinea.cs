@@ -108,11 +108,13 @@ namespace Conexion
 
         public string Eliminar(ADLinea Objeto)
         {
+            Console.WriteLine("hola");
             var Linea = db.GetCollection<ADLinea>("LineaProductos");
             var query = new QueryDocument
             {
                 {"_id",ObjectId.Parse(Objeto.idLinea) }
             };
+            Console.WriteLine("Holaaa");
             Linea.Remove(query);
 
             return "OK";
