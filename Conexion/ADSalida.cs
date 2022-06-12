@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,6 +21,7 @@ namespace Conexion
         public string fecha;
         public string idUsuario;
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
+        private IEnumerable<ADProductos> joinedReadings;
 
         /*public string id
         {
@@ -101,23 +103,37 @@ namespace Conexion
         }
         public DataTable mostrar()
         {
-            List<ADSalida> salidas = db.GetCollection<ADSalida>("Salidas").FindAll().ToList();
-            DataTable Resultado = new DataTable("salidas");
-            Resultado.Columns.Add("Id");
-            Resultado.Columns.Add("idProducto");
-            Resultado.Columns.Add("Cantidad");
-            Resultado.Columns.Add("Fecha");
-            Resultado.Columns.Add("idUsuario");
-            for (int i = 0; i < salidas.Count; i++)
-            {
-                Resultado.Rows.Add(salidas[i].idSalida,
-                    salidas[i].idProducto,
-                    salidas[i].Cantidad,
-                    salidas[i].fecha,
-                    salidas[i].idUsuario);
-            }
+            
+             DataTable Resultado = new DataTable("salidas");
+
+            var Salidas = db.GetCollection<ADSalida>("Salidas");
+            var Productos = db.GetCollection<ADProductos>("Productos");
+
+            var query = (from p in Salidas.AsQueryable()
+                         join o in Productos.AsQueryable() on p.idProducto equals o.id into joinedReadings
+                         select new ADSalida()
+                         {
+                             idSalida = p.idSalida,
+                             Cantidad = p.Cantidad,
+                             joinedReadings = joinedReadings,
+                         }).ToList();
+            
+           
+                Resultado.Columns.Add("Cantidad");
+                Resultado.Columns.Add("Producto");
+               
+                for (int i = 0; i < devices.Count; i++)
+                {
+                    Resultado.Rows.Add(devices[i].Cantidad,
+                       devices[i].joinedReadings);
+                }
+            
             return Resultado;
+            
+
         }
 
     }
+
+   
 }
