@@ -190,5 +190,17 @@ namespace Conexion
 
             return Resultado;
         }
+        public string Eliminar(ADProductos Objeto)
+        {
+            var Producto = db.GetCollection<ADProductos>("Productos");
+            var query = new QueryDocument
+            {
+                {"_id",ObjectId.Parse(Objeto.id) }
+            };
+            Producto.Remove(query);
+
+            return "OK";
+
+        }
     }
 }

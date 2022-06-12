@@ -44,5 +44,11 @@ namespace Controlador
         {
             return new ADProductos().mostrar();
         }
+        public static string Eliminar(string Id)
+        {
+            ADProductos Objeto = new ADProductos();
+            Objeto.id = Id;
+            return Objeto.Eliminar(Objeto);
+        }
     }
 }

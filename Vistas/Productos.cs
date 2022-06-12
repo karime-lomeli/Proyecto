@@ -258,5 +258,46 @@ namespace Vistas
             }
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("Se Eliminaran los registos seleccionados", "Dashwork", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+
+                {
+                    string Id;
+                    string Respuesta = "";
+
+                    foreach (DataGridViewRow row in dataListado.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Id = Convert.ToString(row.Cells[1].Value);
+                            Respuesta = CProductos.Eliminar(Id);
+
+                            if (Respuesta.Equals("OK"))
+                            {
+                                this.MensajeOk("Registro eliminado Correctamente");
+                            }
+                            else
+                            {
+                                this.MensajeError(Respuesta);
+                            }
+                        }
+                    }
+
+                    this.Mostrar();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }
