@@ -125,40 +125,32 @@ namespace Vistas
             this.dataListado.Columns[0].Visible = false;
 
         }*/
-        /*private void Mostrar()
+        private void Mostrar()
          {
-             this.dataListado.DataSource = LSalidas.Mostrar();
-             this.OcultarColumnas();
+            CSalidas Objeto = new CSalidas();
+             this.dataListado.DataSource = Objeto.Mostrar();
+             //this.OcultarColumnas();
              labelTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
 
-         }*/
-        /* private void BuscarFecha()
-         {
-             dataListado.DataSource = LSalidas.BuscarFecha(dateTimePickerFechaInicio.Value.ToString("yyyy-MM-dd"), dateTimePickerFechaFin.Value.ToString("yyyy-MM-dd"));
-             OcultarColumnas();
-             labelTotal.Text = "Total Registros: " + dataListado.Rows.Count;
          }
-        private void MostrarDetalles()
-        {
-            dataGridViewDetalle.DataSource = LSalidas.MostrarDetalleSalida(textIdsalida.Text);
-        }*/
+        
         private void creartabla()
         {
             this.dtDetalle = new DataTable("Detalle");
-            this.dtDetalle.Columns.Add("idedm", Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("edm", Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("workcenter", Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("linea", Type.GetType("System.String"));
-            this.dtDetalle.Columns.Add("cantidad_salida", Type.GetType("System.Decimal"));
-            this.dtDetalle.Columns.Add("disponible", Type.GetType("System.Int32"));
+            this.dtDetalle.Columns.Add("idProducto", Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("Producto", Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("Almacen", Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("Linea", Type.GetType("System.String"));
+            this.dtDetalle.Columns.Add("Cantidad", Type.GetType("System.Decimal"));
+            this.dtDetalle.Columns.Add("Stock", Type.GetType("System.Int32"));
             dataGridViewDetalle.DataSource = dtDetalle;
         }
 
         private void Salidas_Load(object sender, EventArgs e)
         {
-            this.Top = 15;
-            this.Left = 190;
-            //this.Mostrar();
+            this.Top = 0;
+            this.Left = 110;
+            this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
             this.creartabla();
@@ -242,12 +234,12 @@ namespace Vistas
                     
                             MensajeWarning("Ya llegaste a tu stock minimo");
                             DataRow row = this.dtDetalle.NewRow();
-                            row["idedm"] = this.txtID.Text;
-                            row["edm"] = this.txtProducto.Text;
-                            row["almacen"] = this.txtNomAlmacen.Text;
-                            row["linea"] = this.txtLinea.Text;
-                            row["cantidad_salida"] = Convert.ToInt32(this.txtCantidad.Text);
-                            row["disponible"] = Convert.ToInt32(this.txtDisponible.Text);
+                            row["idProducto"] = this.txtID.Text;
+                            row["Producto"] = this.txtProducto.Text;
+                            row["Almacen"] = this.txtNomAlmacen.Text;
+                            row["Linea"] = this.txtLinea.Text;
+                            row["Cantidad"] = Convert.ToInt32(this.txtCantidad.Text);
+                            row["Stock"] = Convert.ToInt32(this.txtDisponible.Text);
                             this.dtDetalle.Rows.Add(row);
                         nuevo = Convert.ToInt32(this.txtDisponible.Text) - Convert.ToInt32(txtCantidad.Text);
                             this.LimpiarDetalle();
@@ -270,12 +262,12 @@ namespace Vistas
                         else
                         {
                             DataRow row = this.dtDetalle.NewRow();
-                            row["idedm"] = this.txtID.Text;
-                            row["edm"] = this.txtProducto.Text;
-                            row["workcenter"] = this.txtNomAlmacen.Text;
-                            row["linea"] = this.txtLinea.Text;
-                            row["cantidad_salida"] = Convert.ToDecimal(this.txtCantidad.Text);
-                            row["Disponible"] = Convert.ToDecimal(this.txtDisponible.Text);
+                            row["idProducto"] = this.txtID.Text;
+                            row["Producto"] = this.txtProducto.Text;
+                            row["Almacen"] = this.txtNomAlmacen.Text;
+                            row["Linea"] = this.txtLinea.Text;
+                            row["Cantidad"] = Convert.ToDecimal(this.txtCantidad.Text);
+                            row["Stock"] = Convert.ToDecimal(this.txtDisponible.Text);
                             this.dtDetalle.Rows.Add(row);
                             nuevo = Convert.ToInt32(this.txtDisponible.Text) - Convert.ToInt32(txtCantidad.Text);
                             this.HabilitarBotones();

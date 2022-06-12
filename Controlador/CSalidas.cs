@@ -14,8 +14,8 @@ namespace Controlador
         {
             ADSalida Objeto = new ADSalida
             {
-                idProducto = salidas.Rows[0]["idedm"].ToString(),
-                Cantidad = Convert.ToInt32(salidas.Rows[0]["cantidad_salida"].ToString()),
+                idProducto = salidas.Rows[0]["idProducto"].ToString(),
+                Cantidad = Convert.ToInt32(salidas.Rows[0]["Cantidad"].ToString()),
                 fecha = fecha,
                 idUsuario = id
 
@@ -23,6 +23,10 @@ namespace Controlador
 
             return Objeto.Insertar(Objeto, nuevo);
             
+        }
+        public DataTable Mostrar()
+        {
+            return new ADSalida().mostrar();
         }
     }
 }

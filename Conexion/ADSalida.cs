@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,6 +98,25 @@ namespace Conexion
             };
             Producto.Update(query, update);
             return "OK";
+        }
+        public DataTable mostrar()
+        {
+            List<ADSalida> salidas = db.GetCollection<ADSalida>("Salidas").FindAll().ToList();
+            DataTable Resultado = new DataTable("salidas");
+            Resultado.Columns.Add("Id");
+            Resultado.Columns.Add("idProducto");
+            Resultado.Columns.Add("Cantidad");
+            Resultado.Columns.Add("Fecha");
+            Resultado.Columns.Add("idUsuario");
+            for (int i = 0; i < salidas.Count; i++)
+            {
+                Resultado.Rows.Add(salidas[i].idSalida,
+                    salidas[i].idProducto,
+                    salidas[i].Cantidad,
+                    salidas[i].fecha,
+                    salidas[i].idUsuario);
+            }
+            return Resultado;
         }
 
     }
