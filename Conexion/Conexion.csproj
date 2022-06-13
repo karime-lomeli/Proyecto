@@ -135,6 +135,7 @@
     <Compile Include="ADLinea.cs" />
     <Compile Include="ADPedido.cs" />
     <Compile Include="ADProductos.cs" />
+    <Compile Include="ADProveedores.cs" />
     <Compile Include="ADSalida.cs" />
     <Compile Include="ADUsuario.cs" />
     <Compile Include="Class1.cs" />

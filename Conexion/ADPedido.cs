@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Conexion
 {
-    class ADPedido
+    public class ADPedido
     {
+       
     }
 }

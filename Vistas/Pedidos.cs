@@ -77,10 +77,10 @@ namespace Vistas
             else
             {
                 this.Habilitar(false);
-                this.btnNuevo.Enabled = false;
+                this.btnNuevo.Enabled = true;
                 this.btnGuardar.Enabled = true;
                 this.btnCancelar.Enabled = true;
-                this.btnEditar.Enabled = false;
+                this.btnEditar.Enabled = true;
             }
         }
 
@@ -100,6 +100,7 @@ namespace Vistas
            // this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
+            this.LlenarProveedor();
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -126,6 +127,13 @@ namespace Vistas
                 CPedido Objeto = new CPedido();
 
             }
+        }
+        private void LlenarProveedor()
+        {
+            CPedido Objeto = new CPedido();
+            Proveedor.DataSource = CPedido.MostrarProveedor();
+            Proveedor.ValueMember = "Id";
+            Proveedor.DisplayMember = "Nombre";
         }
     }
 }
