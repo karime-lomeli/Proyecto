@@ -231,6 +231,13 @@ namespace Conexion
             }
             return Resultado;
         }
+        public string BuscarId(string texto)
+        {
+            MongoCollection Producto = db.GetCollection<ADProductos>("Productos");
+            var filtro = Query<ADProductos>.EQ(cl => cl.id, texto);
+            List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
+            return productos[0].Nombre;
+        }
 
     }
     

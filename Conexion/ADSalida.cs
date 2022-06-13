@@ -110,9 +110,10 @@ namespace Conexion
 
             var Productos = db.GetCollection<ADProductos>("Productos");
             var Usuarios = db.GetCollection<ADUsuario>("Usuarios");
+            ADProductos Producto = new ADProductos();
+            ADUsuario Usuario = new ADUsuario();
 
-
-            Resultado.Columns.Add("IdSalida");
+            Resultado.Columns.Add("Codigo");
             Resultado.Columns.Add("Nombre");
             Resultado.Columns.Add("Cantidad");
             Resultado.Columns.Add("Usuario");
@@ -120,11 +121,13 @@ namespace Conexion
 
             for(int i = 0; i < productos.Count; i++)
             {
+                string nombre = Producto.BuscarId(productos[i].idProducto);
+                string usuarionombre = Usuario.BuscarId(productos[i].idUsuario);
                 Resultado.Rows.Add(
                     productos[i].id,
-                    productos[i].idProducto,
+                    nombre,
                     productos[i].Cantidad,
-                    productos[i].idUsuario,
+                    usuarionombre,
                     productos[i].fecha
                     );
             }

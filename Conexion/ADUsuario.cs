@@ -239,5 +239,12 @@ namespace Conexion
             
             return Resultado;
         }
+        public string BuscarId(string texto)
+        {
+            MongoCollection Usuario = db.GetCollection<ADUsuario>("Usuarios");
+            var filtro = Query<ADUsuario>.EQ(cl => cl.Idusuario, texto);
+            List<ADUsuario> usuarios = Usuario.FindAs<ADUsuario>(filtro).ToList();
+            return usuarios[0].Nombre;
+        }
     }
 }

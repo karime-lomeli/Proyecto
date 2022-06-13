@@ -120,16 +120,16 @@ namespace Vistas
                 this.btnQuitar.Enabled = false;
             }
         }
-        /*private void OcultarColumnas()
+       private void OcultarColumnas()
         {
             this.dataListado.Columns[0].Visible = false;
-
-        }*/
+            //this.dataListado.Columns["IdSalida"].Visible = false;
+        }
         private void Mostrar()
          {
             CSalidas Objeto = new CSalidas();
              this.dataListado.DataSource = Objeto.Mostrar();
-             //this.OcultarColumnas();
+             this.OcultarColumnas();
              labelTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
 
          }
@@ -163,11 +163,7 @@ namespace Vistas
             vista.ShowDialog();
         }
 
-        private void bBuscar_Click(object sender, EventArgs e)
-        {
-           //this.BuscarFecha();
-        }
-
+        
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             this.IsNuevo = true;
