@@ -43,17 +43,15 @@ namespace Vistas
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnProducto = new System.Windows.Forms.Button();
-            this.txtNomAlmacen = new System.Windows.Forms.TextBox();
-            this.txtLinea = new System.Windows.Forms.TextBox();
             this.RPendiente = new System.Windows.Forms.RadioButton();
             this.RRecibido = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Proveedor = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -164,20 +162,18 @@ namespace Vistas
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Proveedor);
+            this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.txtCantidad);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.RRecibido);
             this.tabPage1.Controls.Add(this.RPendiente);
-            this.tabPage1.Controls.Add(this.txtLinea);
-            this.tabPage1.Controls.Add(this.txtNomAlmacen);
             this.tabPage1.Controls.Add(this.btnProducto);
             this.tabPage1.Controls.Add(this.btnCancelar);
             this.tabPage1.Controls.Add(this.btnEditar);
             this.tabPage1.Controls.Add(this.btnGuardar);
             this.tabPage1.Controls.Add(this.btnNuevo);
-            this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.txtNombre);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -207,13 +203,14 @@ namespace Vistas
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.Control;
             this.btnGuardar.Location = new System.Drawing.Point(620, 297);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(99, 28);
             this.btnGuardar.TabIndex = 59;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
@@ -226,15 +223,6 @@ namespace Vistas
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(51, 204);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 13);
-            this.label16.TabIndex = 40;
-            this.label16.Text = "Línea";
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -243,15 +231,6 @@ namespace Vistas
             this.label19.Size = new System.Drawing.Size(50, 13);
             this.label19.TabIndex = 35;
             this.label19.Text = "Producto";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(40, 149);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(48, 13);
-            this.label20.TabIndex = 38;
-            this.label20.Text = "Almacen";
             // 
             // txtNombre
             // 
@@ -270,20 +249,6 @@ namespace Vistas
             this.btnProducto.TabIndex = 65;
             this.btnProducto.UseVisualStyleBackColor = false;
             this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
-            // txtNomAlmacen
-            // 
-            this.txtNomAlmacen.Location = new System.Drawing.Point(109, 149);
-            this.txtNomAlmacen.Name = "txtNomAlmacen";
-            this.txtNomAlmacen.Size = new System.Drawing.Size(223, 20);
-            this.txtNomAlmacen.TabIndex = 66;
-            // 
-            // txtLinea
-            // 
-            this.txtLinea.Location = new System.Drawing.Point(109, 204);
-            this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(224, 20);
-            this.txtLinea.TabIndex = 67;
             // 
             // RPendiente
             // 
@@ -310,7 +275,7 @@ namespace Vistas
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(498, 104);
+            this.label1.Location = new System.Drawing.Point(33, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 70;
@@ -318,10 +283,27 @@ namespace Vistas
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(553, 101);
+            this.txtCantidad.Location = new System.Drawing.Point(108, 217);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(224, 20);
             this.txtCantidad.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(33, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "Proveedor";
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.FormattingEnabled = true;
+            this.Proveedor.Location = new System.Drawing.Point(109, 160);
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.Size = new System.Drawing.Size(226, 21);
+            this.Proveedor.TabIndex = 73;
             // 
             // Pedidos
             // 
@@ -358,16 +340,14 @@ namespace Vistas
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnProducto;
-        private System.Windows.Forms.TextBox txtNomAlmacen;
         private System.Windows.Forms.RadioButton RRecibido;
         private System.Windows.Forms.RadioButton RPendiente;
-        private System.Windows.Forms.TextBox txtLinea;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox Proveedor;
     }
 }

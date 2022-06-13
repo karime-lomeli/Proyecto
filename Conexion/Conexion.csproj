@@ -133,6 +133,7 @@
   <ItemGroup>
     <Compile Include="ADAlmacen.cs" />
     <Compile Include="ADLinea.cs" />
+    <Compile Include="ADPedido.cs" />
     <Compile Include="ADProductos.cs" />
     <Compile Include="ADSalida.cs" />
     <Compile Include="ADUsuario.cs" />

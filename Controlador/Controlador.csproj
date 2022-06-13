@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLineaAlmacen.cs" />
+    <Compile Include="CPedido.cs" />
     <Compile Include="CProductos.cs" />
     <Compile Include="CSalidas.cs" />
     <Compile Include="CUsuario.cs" />

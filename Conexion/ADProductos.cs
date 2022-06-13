@@ -173,6 +173,7 @@ namespace Conexion
             Resultado.Columns.Add("Requerido");
             Resultado.Columns.Add("Minimo");
             Resultado.Columns.Add("Stock");
+            Resultado.Columns.Add("idAlmacen");
             for (int i = 0; i < productos.Count; i++)
             {
                 string nombre = Objeto.BuscarId(productos[i].Almacen);
@@ -183,7 +184,8 @@ namespace Conexion
                     nombre,
                     productos[i].Requerido,
                     productos[i].Minimo,
-                    productos[i].Stock);
+                    productos[i].Stock,
+                    productos[i].Almacen);
             }
 
 

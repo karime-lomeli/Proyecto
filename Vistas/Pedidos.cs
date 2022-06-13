@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Controlador;
 
 namespace Vistas
 {
@@ -18,22 +19,19 @@ namespace Vistas
         private static Salidas _instancia;
         private int nuevo;
         private int stock;
-        private string idAlmacen;
+        public string idAlmacen;
+        private string idProducto;
 
         public Pedidos()
         {
             InitializeComponent();
             this.txtNombre.ReadOnly = true;
-            this.txtNomAlmacen.ReadOnly = true;
-            this.txtLinea.ReadOnly = true;
             this.txtCantidad.ReadOnly = true;
         }
         public void setPedido(string nombre, string almacen, string linea, int stock)
         {
 
             this.txtNombre.Text = nombre;
-            this.txtNomAlmacen.Text = almacen;
-            this.txtLinea.Text = linea;
             this.stock = stock;
 
         }
@@ -50,25 +48,20 @@ namespace Vistas
         {
             this.txtNombre.Text = string.Empty;
             this.txtCantidad.Text = string.Empty;
-            this.txtNomAlmacen.Text = string.Empty;
-            this.txtLinea.Text = string.Empty;
+            
 
         }
         private void LimpiarDetalle()
         {
             
-            this.txtNomAlmacen.Text = string.Empty;
-            this.txtLinea.Text = string.Empty;
+          
             this.txtCantidad.Text = string.Empty;
             this.txtNombre.Text = string.Empty;
         }
         private void Habilitar(bool valor)
         {
-            this.txtNombre.ReadOnly = !valor;
-            this.txtNombre.ReadOnly = !valor;
-            //this.textBoxStockInicial.ReadOnly = true;
-
             this.btnProducto.Enabled = valor;
+            this.txtCantidad.ReadOnly = !valor;
 
         }
         private void HabilitarBotones()
@@ -79,13 +72,15 @@ namespace Vistas
                 this.btnNuevo.Enabled = false;
                 this.btnGuardar.Enabled = true;
                 this.btnCancelar.Enabled = true;
+                this.btnEditar.Enabled = false;
             }
             else
             {
                 this.Habilitar(false);
-                this.btnNuevo.Enabled = true;
-                this.btnGuardar.Enabled = false;
-                this.btnCancelar.Enabled = false;
+                this.btnNuevo.Enabled = false;
+                this.btnGuardar.Enabled = true;
+                this.btnCancelar.Enabled = true;
+                this.btnEditar.Enabled = false;
             }
         }
 
@@ -112,6 +107,25 @@ namespace Vistas
             VistaProductos vista = new VistaProductos();
             vista.Objeto2 = this;
             vista.ShowDialog();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == string.Empty)
+            {
+                MensajeError("No hay producto");
+            }else if(txtCantidad.Text == string.Empty)
+            {
+                MensajeError("Ingrese cantidad");
+            }else if (Convert.ToInt32(txtCantidad.Text) <= 0)
+            {
+                MensajeError("Ingrese cantidad valida");
+            }
+            else
+            {
+                CPedido Objeto = new CPedido();
+
+            }
         }
     }
 }

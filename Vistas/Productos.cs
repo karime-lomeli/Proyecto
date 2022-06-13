@@ -100,6 +100,7 @@ namespace Vistas
         {
             this.dataListado.Columns["Eliminar"].Visible = false;
             this.dataListado.Columns["Id"].Visible = false;
+            this.dataListado.Columns["idAlmacen"].Visible = false;
            // this.dataListado.Columns["idworkcenter"].Visible = false;
             //this.dataListado.Columns["stock_minimo"].Visible = false;
             //this.dataListado.Columns["rfa_pendiente"].Visible = false;
