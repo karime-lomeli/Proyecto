@@ -336,7 +336,7 @@ namespace Vistas
                     this.HabilitarBotones();
                     this.Limpiar();
                     this.LimpiarDetalle();
-                    //this.Mostrar();
+                    this.Mostrar();
                 }
 
             }

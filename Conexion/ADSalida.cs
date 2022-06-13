@@ -23,7 +23,7 @@ namespace Conexion
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
         private IEnumerable<ADProductos> joinedReadings;
 
-        /*public string id
+        public string id
         {
             get
             {
@@ -33,7 +33,7 @@ namespace Conexion
             {
                 idSalida = value;
             }
-        }
+        }/*
         public string IdProducto
         {
             get
@@ -106,28 +106,29 @@ namespace Conexion
             
              DataTable Resultado = new DataTable("salidas");
 
-            var Salidas = db.GetCollection<ADSalida>("Salidas");
-            var Productos = db.GetCollection<ADProductos>("Productos");
+            List<ADSalida> productos = db.GetCollection<ADSalida>("Salidas").FindAll().ToList();
 
-            var query = (from p in Salidas.AsQueryable()
-                         join o in Productos.AsQueryable() on p.idProducto equals o.id into joinedReadings
-                         select new ADSalida()
-                         {
-                             idSalida = p.idSalida,
-                             Cantidad = p.Cantidad,
-                             joinedReadings = joinedReadings,
-                         }).ToList();
-            
-           
-                Resultado.Columns.Add("Cantidad");
-                Resultado.Columns.Add("Producto");
-               
-                for (int i = 0; i < devices.Count; i++)
-                {
-                    Resultado.Rows.Add(devices[i].Cantidad,
-                       devices[i].joinedReadings);
-                }
-            
+            var Productos = db.GetCollection<ADProductos>("Productos");
+            var Usuarios = db.GetCollection<ADUsuario>("Usuarios");
+
+
+            Resultado.Columns.Add("IdSalida");
+            Resultado.Columns.Add("Nombre");
+            Resultado.Columns.Add("Cantidad");
+            Resultado.Columns.Add("Usuario");
+            Resultado.Columns.Add("Fecha");
+
+            for(int i = 0; i < productos.Count; i++)
+            {
+                Resultado.Rows.Add(
+                    productos[i].id,
+                    productos[i].idProducto,
+                    productos[i].Cantidad,
+                    productos[i].idUsuario,
+                    productos[i].fecha
+                    );
+            }
+
             return Resultado;
             
 
