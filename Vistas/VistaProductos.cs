@@ -14,6 +14,7 @@ namespace Vistas
     public partial class VistaProductos : Form
     {
         public Salidas Objeto;
+        public Pedidos Objeto2;
         public VistaProductos()
         {
             InitializeComponent();
@@ -55,19 +56,30 @@ namespace Vistas
 
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
-            //Salidas Fromulario = Salidas.GetInstancia() ;
             string parametro1, parametro2, parametro4, parametro6;
             int parametro5, parametro3, parametro7;
             string nombreAlmacen = CLineaAlmacen.BuscarAlmacenid(Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value));
             parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Id"].Value);
             parametro2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             parametro5 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Requerido"].Value);
-            parametro4 = nombreAlmacen;
+            parametro4 = Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value);
             parametro6 = Convert.ToString(this.dataListado.CurrentRow.Cells["Linea"].Value);
             parametro3 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Minimo"].Value);
             parametro7 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Stock"].Value);
-            Objeto.setProducto(parametro1, parametro2, parametro5, parametro4, parametro6, parametro3, parametro7);
-            this.Hide();
+            if (Objeto != null)
+            {
+                //Salidas Fromulario = Salidas.GetInstancia() ;
+                
+                Objeto.setProducto(parametro1, parametro2, parametro5, parametro4, parametro6, parametro3, parametro7);
+                Objeto = null;
+                this.Hide();
+            }
+            else
+            {
+                Objeto2.setPedido(parametro1, nombreAlmacen, parametro6, parametro7);
+                Objeto2=null;
+                this.Hide();
+            }
         }
     }
 }

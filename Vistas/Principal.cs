@@ -98,5 +98,12 @@ namespace Vistas
 
             MessageBox.Show("Reporte de productos generado", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Pedidos Objeto = new Pedidos();
+            Objeto.MdiParent = this;
+            Objeto.Show();
+        }
     }
 }

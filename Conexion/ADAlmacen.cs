@@ -123,10 +123,19 @@ namespace Conexion
         }
         public string BuscarId(string texto)
         {
+           
             MongoCollection Almacen = db.GetCollection<ADAlmacen>("Almacen");
             var filtro = Query<ADAlmacen>.EQ(cl => cl.idAlmacen, texto);
             List<ADAlmacen> almacenes = Almacen.FindAs<ADAlmacen>(filtro).ToList();
-            return almacenes[0].Nombre;
+            if (almacenes.Count > 0)
+            {
+                //almacenes[0].Nombre = "Karime";
+                return almacenes[0].Nombre;
+            }
+            else
+            {
+                return texto;
+            }
         }
     }
 }
