@@ -130,7 +130,7 @@ namespace Vistas
             CSalidas Objeto = new CSalidas();
              this.dataListado.DataSource = Objeto.Mostrar();
              this.OcultarColumnas();
-             labelTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
+             Total.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
 
          }
         
@@ -148,12 +148,11 @@ namespace Vistas
 
         private void Salidas_Load(object sender, EventArgs e)
         {
-            this.Top = 0;
-            this.Left = 110;
+            this.Top = 8;
+            this.Left = 135;
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
-            this.creartabla();
         }
 
         private void btnProducto_Click(object sender, EventArgs e)
@@ -341,6 +340,16 @@ namespace Vistas
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Total_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
