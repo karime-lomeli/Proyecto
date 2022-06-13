@@ -162,6 +162,7 @@ namespace Conexion
         }
         public DataTable mostrar()
         {
+            ADAlmacen Objeto = new ADAlmacen();
             List<ADProductos> productos = db.GetCollection<ADProductos>("Productos").FindAll().ToList();
             DataTable Resultado = new DataTable("producto");
             Resultado.Columns.Add("Id");
@@ -174,11 +175,12 @@ namespace Conexion
             Resultado.Columns.Add("Stock");
             for (int i = 0; i < productos.Count; i++)
             {
+                string nombre = Objeto.BuscarId(productos[i].Almacen);
                 Resultado.Rows.Add(productos[i].id,
                     productos[i].Nombre,
                     productos[i].Descripcion,
                     productos[i].Linea,
-                    productos[i].Almacen,
+                    nombre,
                     productos[i].Requerido,
                     productos[i].Minimo,
                     productos[i].Stock);

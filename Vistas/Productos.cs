@@ -188,6 +188,7 @@ namespace Vistas
         }
         private void Mostrar()
          {
+            
              this.dataListado.DataSource = CProductos.Mostrar();
              this.OcultarColumnas();
             // labelTotal.Text = "Total de Registros: " + Convert.ToString(dataListado.Rows.Count);
