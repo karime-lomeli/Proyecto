@@ -58,7 +58,6 @@ namespace Vistas
             //Salidas Fromulario = Salidas.GetInstancia() ;
             string parametro1, parametro2, parametro4, parametro6;
             int parametro5, parametro3, parametro7;
-            Console.WriteLine("Estoy en la funcion");
             string nombreAlmacen = CLineaAlmacen.BuscarAlmacenid(Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value));
             parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Id"].Value);
             parametro2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
@@ -67,7 +66,6 @@ namespace Vistas
             parametro6 = Convert.ToString(this.dataListado.CurrentRow.Cells["Linea"].Value);
             parametro3 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Minimo"].Value);
             parametro7 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Stock"].Value);
-            Console.WriteLine("Estoy mandando " + parametro2.ToString());
             Objeto.setProducto(parametro1, parametro2, parametro5, parametro4, parametro6, parametro3, parametro7);
             this.Hide();
         }
