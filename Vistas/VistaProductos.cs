@@ -59,11 +59,11 @@ namespace Vistas
             string parametro1, parametro2, parametro4, parametro6;
             int parametro5, parametro3, parametro7;
             Console.WriteLine("Estoy en la funcion");
-            
+            string nombreAlmacen = CLineaAlmacen.BuscarAlmacenid(Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value));
             parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Id"].Value);
             parametro2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
             parametro5 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Requerido"].Value);
-            parametro4 = Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value);
+            parametro4 = nombreAlmacen;
             parametro6 = Convert.ToString(this.dataListado.CurrentRow.Cells["Linea"].Value);
             parametro3 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Minimo"].Value);
             parametro7 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Stock"].Value);

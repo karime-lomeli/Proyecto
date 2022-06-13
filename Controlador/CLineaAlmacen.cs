@@ -74,5 +74,10 @@ namespace Controlador
 
             return Objeto.buscar(texto);
         }
+        public static string BuscarAlmacenid(string texto)
+        {
+            ADAlmacen Objeto = new ADAlmacen();
+            return Objeto.BuscarId(texto);
+        }
     }
 }

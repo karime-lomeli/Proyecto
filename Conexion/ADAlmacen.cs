@@ -121,5 +121,12 @@ namespace Conexion
             }
             return Resultado;
         }
+        public string BuscarId(string texto)
+        {
+            MongoCollection Almacen = db.GetCollection<ADAlmacen>("Almacen");
+            var filtro = Query<ADAlmacen>.EQ(cl => cl.idAlmacen, texto);
+            List<ADAlmacen> almacenes = Almacen.FindAs<ADAlmacen>(filtro).ToList();
+            return almacenes[0].Nombre;
+        }
     }
 }
