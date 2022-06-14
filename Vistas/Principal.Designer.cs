@@ -30,8 +30,6 @@ namespace Vistas
         private void InitializeComponent()
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -57,30 +55,13 @@ namespace Vistas
             this.menuStrip.BackColor = System.Drawing.Color.SteelBlue;
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.windowsMenu,
             this.fileMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 24);
-            this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip.Size = new System.Drawing.Size(964, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // windowsMenu
-            // 
-            this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeAllToolStripMenuItem});
-            this.windowsMenu.ForeColor = System.Drawing.Color.White;
-            this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(68, 20);
-            this.windowsMenu.Text = "&Windows";
-            // 
-            // closeAllToolStripMenuItem
-            // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.closeAllToolStripMenuItem.Text = "C&lose All";
             // 
             // fileMenu
             // 
@@ -89,6 +70,7 @@ namespace Vistas
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(41, 20);
             this.fileMenu.Text = "&Salir";
+            this.fileMenu.Click += new System.EventHandler(this.fileMenu_Click);
             // 
             // button1
             // 
@@ -279,8 +261,6 @@ namespace Vistas
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
-        private System.Windows.Forms.ToolStripMenuItem windowsMenu;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

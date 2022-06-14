@@ -107,6 +107,14 @@ namespace Vistas
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
+            LlenarAlmacen();
+        }
+        private void LlenarAlmacen()
+        {
+            CLineaAlmacen Objeto = new CLineaAlmacen();
+            Almacen.DataSource = Objeto.MostrarAlmacen();
+            Almacen.ValueMember = "Id";
+            Almacen.DisplayMember = "Nombre";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -411,6 +419,12 @@ namespace Vistas
         private void tabPage4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string id = Almacen.SelectedValue.ToString();
+            Console.WriteLine(id);
         }
     }
 }

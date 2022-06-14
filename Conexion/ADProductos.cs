@@ -160,6 +160,22 @@ namespace Conexion
             Producto.Update(query, update);
             return "OK";
         }
+        public int stockReturn(string texto)
+        {
+            MongoCollection Producto = db.GetCollection<ADProductos>("Productos");
+            var filtro = Query<ADProductos>.EQ(cl => cl.id, texto);
+            List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
+            return Convert.ToInt32(productos[0].Stock);
+
+        }
+        public string AlmacenReturn(string texto)
+        {
+            MongoCollection Producto = db.GetCollection<ADProductos>("Productos");
+            var filtro = Query<ADProductos>.EQ(cl => cl.id, texto);
+            List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
+            return productos[0].Almacen;
+
+        }
         public DataTable mostrar()
         {
             ADAlmacen Objeto = new ADAlmacen();
@@ -173,6 +189,7 @@ namespace Conexion
             Resultado.Columns.Add("Requerido");
             Resultado.Columns.Add("Minimo");
             Resultado.Columns.Add("Stock");
+            Resultado.Columns.Add("idAlmacen");
             for (int i = 0; i < productos.Count; i++)
             {
                 string nombre = Objeto.BuscarId(productos[i].Almacen);
@@ -183,7 +200,8 @@ namespace Conexion
                     nombre,
                     productos[i].Requerido,
                     productos[i].Minimo,
-                    productos[i].Stock);
+                    productos[i].Stock,
+                    productos[i].Almacen);
             }
 
 
