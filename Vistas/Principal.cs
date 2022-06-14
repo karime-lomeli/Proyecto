@@ -33,6 +33,40 @@ namespace Vistas
             Objeto.IdUsuario = this.IdUsuario;
             Objeto.Show();
         }
+        private void GestionUsuario()
+        {
+            //Si es manager se le dan todos los permisos
+            if (Acceso == "Manager")
+            {
+                this.button3.Enabled = true; //lineas
+                this.button1.Enabled = true; //productos
+                this.button2.Enabled = true; //salidas
+                this.button4.Enabled = true; //usuarios
+                this.button6.Enabled = true; //pedidos
+                this.btnReportes.Enabled = true;
+
+            }
+            //Si es usuario solo salidas y reportes.
+            if (Acceso == "Usuario")
+            {
+                this.button3.Enabled = false;
+                this.button1.Enabled = true;
+                this.button2.Enabled = true;
+                this.button4.Enabled = false;
+                this.button6.Enabled = false;
+                this.btnReportes.Enabled = false;
+            }
+            //Administrador, todo excepto usuarios.
+            if (Acceso == "Administrador")
+            {
+                this.button3.Enabled = false;
+                this.button1.Enabled = true;
+                this.button2.Enabled = true;
+                this.button4.Enabled = false;
+                this.button6.Enabled = true;
+                this.btnReportes.Enabled = true;
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

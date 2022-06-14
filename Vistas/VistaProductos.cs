@@ -33,6 +33,7 @@ namespace Vistas
             this.dataListado.Columns["minimo"].Visible = false;
             this.dataListado.Columns["requerido"].Visible = false;
             this.dataListado.Columns["stock"].Visible = false;
+            this.dataListado.Columns["idAlmacen"].Visible = false;
         }
         private void Mostrar()
         {
