@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.Conventions;
 
 namespace Vistas
 {
@@ -21,11 +24,23 @@ namespace Vistas
         public string Acceso = "";
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
 
+        
         public Form1()
         {
             InitializeComponent();
         }
 
+        private IMongoDatabase GetDatabase()
+        {
+            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
+            return mongoClient.GetDatabase("Lili");
+        }
+
+        public IMongoCollection<BsonDocument> GetCollection(string Productos)
+        {
+            return GetDatabase().GetCollection<BsonDocument>(Productos);
+
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             Salidas Objeto = new Salidas();
@@ -64,36 +79,51 @@ namespace Vistas
         {
             SLDocument sl = new SLDocument();
 
-            int celdaCabecera = 5; //indica desde donde vamos a empezar
+            int celdaCabecera = 7; //indica desde donde vamos a empezar
             
             sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos"); //Nombre de la hoja de excel
+
+            sl.SetCellValue("B" + 3, "Reporte de inventario"); //Titulo
+            sl.SetCellValue("B" + 5, "Almacen");
 
             //Encabezados de la tabla
             sl.SetCellValue("B"+ celdaCabecera, "ID");
             sl.SetCellValue("C" + celdaCabecera, "Nombre");
-            sl.SetCellValue("D" + celdaCabecera, "Descripción");
+            sl.SetCellValue("D" + celdaCabecera, "Descripcion");
             sl.SetCellValue("E" + celdaCabecera, "Linea");
-            sl.SetCellValue("F" + celdaCabecera, "Almacen");
-            sl.SetCellValue("G" + celdaCabecera, "Requerido");
+            sl.SetCellValue("F" + celdaCabecera, "Requerido");
+            sl.SetCellValue("G" + celdaCabecera, "Stock");
             sl.SetCellValue("H" + celdaCabecera, "Minimo");
-            sl.SetCellValue("I" + celdaCabecera, "Stock");
 
             //Query 
-            List<ADProductos> productos = db.GetCollection<ADProductos>("Productos").FindAll().ToList();
+            IMongoCollection<BsonDocument> productosCollection = GetDatabase().GetCollection<BsonDocument>("Productos");
+            //IMongoCollection<BsonDocument> almacenCollection = GetDatabase().GetCollection<BsonDocument>("Almacen");
 
-            for (int i = 0; i < productos.Count; i++)
+            List<BsonDocument> result = productosCollection.Aggregate()
+                 .Match(new BsonDocument { { "almacen", "62a647850f1e548117ddc8e1" } })
+                 //.Project(new BsonDocument { { "_id", 0 } })
+                 .Lookup("Almacen", "almacen", "idAlmacen", @as: "almacen_docs")
+                 .As<BsonDocument>()
+                 .ToList();
+
+            foreach (BsonDocument res in result)
+            {
+                Console.WriteLine(res.ToString());
+            }
+
+
+            foreach (BsonDocument res in result)
             {
                 celdaCabecera++;
-                sl.SetCellValue("B" + celdaCabecera, productos[i].id.ToString());
-                sl.SetCellValue("C" + celdaCabecera, productos[i].nombre.ToString());
-                sl.SetCellValue("D" + celdaCabecera, productos[i].descripcion.ToString());
-                sl.SetCellValue("E" + celdaCabecera, productos[i].linea.ToString());
-                sl.SetCellValue("F" + celdaCabecera, productos[i].almacen.ToString());
-                sl.SetCellValue("G" + celdaCabecera, productos[i].requerido);
-                sl.SetCellValue("H" + celdaCabecera, productos[i].minimo);
-                sl.SetCellValue("I" + celdaCabecera, productos[i].stock);
-
+                sl.SetCellValue("B" + celdaCabecera, res["id"].ToString());
+                sl.SetCellValue("C" + celdaCabecera, res["nombre"].ToString());
+                sl.SetCellValue("D" + celdaCabecera, res["descripcion"].ToString());
+                sl.SetCellValue("E" + celdaCabecera, res["linea"].ToString());
+                sl.SetCellValue("F" + celdaCabecera, res["requerido"].ToInt32());
+                sl.SetCellValue("G" + celdaCabecera, res["stock"].ToInt32());
+                sl.SetCellValue("H" + celdaCabecera, res["minimo"].ToInt32());
             }
+
             sl.SaveAs("Reporte.xlsx");
 
             MessageBox.Show("Reporte de productos generado", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
