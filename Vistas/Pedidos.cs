@@ -169,7 +169,7 @@ namespace Vistas
                     respuesta= CPedido.Insertar(Proveedor.SelectedValue.ToString(),
                         Convert.ToInt32(txtCantidad.Text),
                         idProducto, fecha, idUsuario, status, this.txtNombre.Text,idAlmacen, stock);
-                    MensajeOk(respuesta);
+                    MensajeOk("El pedido se ha registrado");
                 }
                 else
                 {
@@ -190,7 +190,7 @@ namespace Vistas
                     respuesta = CPedido.Editar(this.txtId.Text,Proveedor.SelectedValue.ToString(),
                     Convert.ToInt32(txtCantidad.Text),
                     idProd, fecha, idUsuario, status, this.txtNombre.Text, idAlmacen, stock);
-                    MensajeOk(respuesta);
+                    MensajeOk("El status se ha actualizado");
 
 
 
@@ -248,6 +248,7 @@ namespace Vistas
                 this.txtNombre.ReadOnly = true;
                 this.btnProducto.Enabled = false;
                 this.txtCantidad.ReadOnly = true;
+                this.btnGuardar.Enabled = true;
                 RPendiente.Enabled = true;
                 RRecibido.Enabled = true;
             }

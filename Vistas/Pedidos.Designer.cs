@@ -34,6 +34,7 @@ namespace Vistas
             this.dataListado = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.Proveedor = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace Vistas
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataListado)).BeginInit();
@@ -125,6 +125,15 @@ namespace Vistas
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Registrar";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(409, 120);
+            this.txtId.MaxLength = 18;
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(223, 20);
+            this.txtId.TabIndex = 74;
+            this.txtId.Visible = false;
             // 
             // Proveedor
             // 
@@ -206,9 +215,9 @@ namespace Vistas
             this.btnEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEditar.Location = new System.Drawing.Point(121, 17);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(61, 28);
+            this.btnEditar.Size = new System.Drawing.Size(120, 28);
             this.btnEditar.TabIndex = 60;
-            this.btnEditar.Text = "A&ctualizar";
+            this.btnEditar.Text = "A&ctualizar Status";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
@@ -250,15 +259,6 @@ namespace Vistas
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(223, 20);
             this.txtNombre.TabIndex = 37;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(409, 120);
-            this.txtId.MaxLength = 18;
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(223, 20);
-            this.txtId.TabIndex = 74;
-            this.txtId.Visible = false;
             // 
             // Pedidos
             // 

@@ -106,5 +106,10 @@ namespace Vistas
             Objeto.idUsuario = this.IdUsuario;
             Objeto.Show();
         }
+
+        private void fileMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

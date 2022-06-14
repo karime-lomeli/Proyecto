@@ -89,6 +89,7 @@ namespace Vistas
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(41, 20);
             this.fileMenu.Text = "&Salir";
+            this.fileMenu.Click += new System.EventHandler(this.fileMenu_Click);
             // 
             // button1
             // 
