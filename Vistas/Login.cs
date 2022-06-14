@@ -78,7 +78,10 @@ namespace Vistas
                         Console.WriteLine("Echoed test = {0}",
                         Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
-                     
+                        string imprimir = Convert.ToString(Encoding.ASCII.GetString(bytes, 0, bytesRec).ToString());
+
+
+
                     }
                     catch (ArgumentNullException ane)
                     {
