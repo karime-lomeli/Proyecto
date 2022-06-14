@@ -58,7 +58,7 @@ namespace Vistas
         {
             string parametro1, parametro2, parametro4, parametro6;
             int parametro5, parametro3, parametro7;
-            string nombreAlmacen = CLineaAlmacen.BuscarAlmacenid(Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value));
+           
             
 
             if (Objeto != null)
@@ -80,8 +80,10 @@ namespace Vistas
                 parametro2 = Convert.ToString(this.dataListado.CurrentRow.Cells["Nombre"].Value);
                 parametro6 = Convert.ToString(this.dataListado.CurrentRow.Cells["Linea"].Value);
                 parametro7 = Convert.ToInt32(this.dataListado.CurrentRow.Cells["Stock"].Value);
+                parametro4 = Convert.ToString(this.dataListado.CurrentRow.Cells["Almacen"].Value);
+                parametro1 = Convert.ToString(this.dataListado.CurrentRow.Cells["Id"].Value);
                 Objeto2.idAlmacen = Convert.ToString(this.dataListado.CurrentRow.Cells["idAlmacen"].Value);
-                Objeto2.setPedido(parametro2, nombreAlmacen, parametro6, parametro7);
+                Objeto2.setPedido(parametro2, parametro4, parametro6, parametro7,parametro1);
                 Objeto2=null;
                 this.Hide();
             }

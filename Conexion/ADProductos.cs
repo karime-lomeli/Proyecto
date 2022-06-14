@@ -160,6 +160,22 @@ namespace Conexion
             Producto.Update(query, update);
             return "OK";
         }
+        public int stockReturn(string texto)
+        {
+            MongoCollection Producto = db.GetCollection<ADProductos>("Productos");
+            var filtro = Query<ADProductos>.EQ(cl => cl.id, texto);
+            List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
+            return Convert.ToInt32(productos[0].Stock);
+
+        }
+        public string AlmacenReturn(string texto)
+        {
+            MongoCollection Producto = db.GetCollection<ADProductos>("Productos");
+            var filtro = Query<ADProductos>.EQ(cl => cl.id, texto);
+            List<ADProductos> productos = Producto.FindAs<ADProductos>(filtro).ToList();
+            return productos[0].Almacen;
+
+        }
         public DataTable mostrar()
         {
             ADAlmacen Objeto = new ADAlmacen();

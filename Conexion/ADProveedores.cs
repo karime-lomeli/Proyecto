@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,12 @@ namespace Conexion
         [BsonRepresentation(BsonType.ObjectId)]
         public string IdProveedor;
         public string nombre;
+        public string apellido;
+        public string calle;
+        public string colonia;
+        public string ciudad;
+        public string telefono;
+        public string correo;
         public string idProveedor
         {
             get
@@ -41,6 +48,18 @@ namespace Conexion
                     proveedores[i].nombre);
             }
             return Resultado;
+        }
+        public void Insertar(ADProveedores objeto)
+        {
+            var Proveedores = db.GetCollection<ADProveedores>("Proveedor");
+            Proveedores.Insert(objeto);
+        }
+        public string BuscarId(string texto)
+        {
+            MongoCollection Proveedor = db.GetCollection<ADProveedores>("Proveedor");
+            var filtro = Query<ADProveedores>.EQ(cl => cl.idProveedor, texto);
+            List<ADProveedores> prov = Proveedor.FindAs<ADProveedores>(filtro).ToList();
+            return string.Concat(prov[0].nombre +" "+ prov[0].apellido);
         }
     }
 }
