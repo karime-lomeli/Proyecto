@@ -109,8 +109,8 @@ namespace Vistas
 
                 Form1 Form = new Form1();
                 Form.IdUsuario = Datos.Rows[0][0].ToString();
-                Form.Apellidos = Datos.Rows[0][1].ToString();
-                Form.Nombre = Datos.Rows[0][2].ToString();
+                Form.Apellidos = Datos.Rows[0][2].ToString();
+                Form.Nombre = Datos.Rows[0][1].ToString();
                 Form.Acceso = Datos.Rows[0][3].ToString();
                 Form.Show();
                 Hide();

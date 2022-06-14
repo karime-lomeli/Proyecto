@@ -27,6 +27,7 @@ namespace Vistas
         private bool IsRecibido = false;
         private int cantidadnueva;
         public string idProd;
+        public string NombreUsuario = " ";
 
         public Pedidos()
         {
@@ -168,7 +169,7 @@ namespace Vistas
                     string fecha = DateTime.Now.ToString("yyyy.MM.dd_hh.mm.ss");
                     respuesta= CPedido.Insertar(Proveedor.SelectedValue.ToString(),
                         Convert.ToInt32(txtCantidad.Text),
-                        idProducto, fecha, idUsuario, status, this.txtNombre.Text,idAlmacen, stock);
+                        idProducto, fecha, idUsuario, status, this.txtNombre.Text,idAlmacen, stock,NombreUsuario);
                     MensajeOk("El pedido se ha registrado");
                 }
                 else

@@ -20,6 +20,7 @@ namespace Conexion
         public int Cantidad;
         public string idAlmacen;
         public string idPedido;
+        public string Usuario;
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
         public string IdEntrada
         {

@@ -167,6 +167,7 @@ namespace Vistas
         {
             Pedidos Objeto = new Pedidos();
             Objeto.MdiParent = this;
+            Objeto.NombreUsuario = this.Nombre;
             Objeto.idUsuario = this.IdUsuario;
             Objeto.Show();
         }

@@ -11,7 +11,7 @@ namespace Controlador
    public class CPedido
     {
         public static string Insertar(string idProveedor, int cantidad, string idProducto, string fecha
-            ,string idUsuario, string status,string nombreProducto,string idAlmacen, int stock)
+            ,string idUsuario, string status,string nombreProducto,string idAlmacen, int stock,string nombreUsuario)
         {
             ADPedido Objeto = new ADPedido();
             Objeto.idProveedor = idProveedor;
@@ -32,6 +32,7 @@ namespace Controlador
                 Entrada.Cantidad = cantidad;
                 Entrada.idAlmacen = idAlmacen;
                 Entrada.idPedido = idPedido;
+                Entrada.Usuario = nombreUsuario;
                 respuesta = Entrada.InsertarEntrada(Entrada, stock, idProducto);
                 //actualizamos el stock del producto
             }

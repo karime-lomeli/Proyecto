@@ -59,7 +59,7 @@ namespace Conexion
             MongoCollection Proveedor = db.GetCollection<ADProveedores>("Proveedor");
             var filtro = Query<ADProveedores>.EQ(cl => cl.idProveedor, texto);
             List<ADProveedores> prov = Proveedor.FindAs<ADProveedores>(filtro).ToList();
-            return string.Concat(prov[0].nombre +" "+ prov[0].apellido);
+            return "Hola";
         }
     }
 }
