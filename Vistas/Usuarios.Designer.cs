@@ -256,12 +256,12 @@ namespace Vistas
             resources.GetString("Acceso.AutoCompleteCustomSource"),
             resources.GetString("Acceso.AutoCompleteCustomSource1"),
             resources.GetString("Acceso.AutoCompleteCustomSource2")});
+            resources.ApplyResources(this.Acceso, "Acceso");
             this.Acceso.FormattingEnabled = true;
             this.Acceso.Items.AddRange(new object[] {
             resources.GetString("Acceso.Items"),
             resources.GetString("Acceso.Items1"),
             resources.GetString("Acceso.Items2")});
-            resources.ApplyResources(this.Acceso, "Acceso");
             this.Acceso.Name = "Acceso";
             // 
             // label1

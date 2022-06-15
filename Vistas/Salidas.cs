@@ -148,8 +148,8 @@ namespace Vistas
 
         private void Salidas_Load(object sender, EventArgs e)
         {
-            this.Top = 8;
-            this.Left = 135;
+            this.Top = 0;
+            this.Left = 130;
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();

@@ -141,11 +141,12 @@ namespace Vistas
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
-            this.Top = 8;
-            this.Left = 135;
+            this.Top = -28;
+            this.Left = 133;
             this.Mostrar();
             this.Habilitar(false);
             this.HabilitarBotones();
+         
             this.LlenarProveedor();
         }
 
@@ -388,6 +389,11 @@ namespace Vistas
         }
 
         private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

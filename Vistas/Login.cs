@@ -102,7 +102,7 @@ namespace Vistas
                 {
                     Console.WriteLine(eb.ToString());
                 }
-                notifyIcon1.Icon = new Icon(Path.GetFullPath(@"C:\Users\KARIME\source\repos\Proyecto\Vistas\imagenes\notificaciones.ico"));
+            //    notifyIcon1.Icon = new Icon(Path.GetFullPath(@"C:\Users\KARIME\source\repos\Proyecto\Vistas\imagenes\notificaciones.ico"));
                 notifyIcon1.Text = imprimir;
                 notifyIcon1.Visible = true;
                 notifyIcon1.BalloonTipTitle = "Dashwork";
