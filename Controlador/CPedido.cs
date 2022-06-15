@@ -78,13 +78,13 @@ namespace Controlador
         {
             Console.WriteLine("insertar");
             ADProveedores Objeto = new ADProveedores();
-            Objeto.nombre = "Juan";
-            Objeto.apellido = "Zamarripa";
-            Objeto.calle = "Hidalgo";
-            Objeto.colonia = "Centro";
-            Objeto.ciudad = "Aguascalientes";
-            Objeto.telefono = "4491253678";
-            Objeto.correo = "juan@gmail.com";
+            Objeto.nombre = "VALERIA";
+            Objeto.apellido = "REYES";
+            Objeto.calle = "ARTICULO 123";
+            Objeto.colonia = "LOMA BONITA";
+            Objeto.ciudad = "AGUASCALIENTES";
+            Objeto.telefono = "4491234569";
+            Objeto.correo = "valeria@gmail.com";
             Objeto.Insertar(Objeto);
         }
         public static DataTable MostrarProveedor()

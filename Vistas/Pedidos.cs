@@ -129,7 +129,7 @@ namespace Vistas
              this.Limpiar();
              this.LimpiarDetalle();
              this.Habilitar(true);
-           // CPedido.InsertarProveedor();
+             //CPedido.InsertarProveedor();
         }
         private void OcultarColumnas()
         {
@@ -316,7 +316,7 @@ namespace Vistas
             pic.ResizeInPixels(150, 80);
             sl.InsertPicture(pic);
 
-            sl.SetCellValue("B2", "Reporte de proveedores"); //Titulo
+            sl.SetCellValue("B2", "Relación pedido/proveedor"); //Titulo
             SLStyle estiloT = sl.CreateStyle();
             estiloT.Font.FontName = "Arial";
             estiloT.Font.FontSize = 14;

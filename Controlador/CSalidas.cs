@@ -17,7 +17,8 @@ namespace Controlador
                 idProducto = salidas.Rows[0]["idProducto"].ToString(),
                 Cantidad = Convert.ToInt32(salidas.Rows[0]["Cantidad"].ToString()),
                 fecha = fecha,
-                idUsuario = id
+                idUsuario = id,
+                Codigo = codigo
 
             };
 

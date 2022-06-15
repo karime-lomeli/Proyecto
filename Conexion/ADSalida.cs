@@ -20,6 +20,7 @@ namespace Conexion
         public int Cantidad;
         public string fecha;
         public string idUsuario;
+        public string Codigo;
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
         private IEnumerable<ADProductos> joinedReadings;
 
@@ -124,7 +125,7 @@ namespace Conexion
                 string nombre = Producto.BuscarId(productos[i].idProducto);
                 string usuarionombre = Usuario.BuscarId(productos[i].idUsuario);
                 Resultado.Rows.Add(
-                    productos[i].id,
+                    productos[i].Codigo,
                     nombre,
                     productos[i].Cantidad,
                     usuarionombre,

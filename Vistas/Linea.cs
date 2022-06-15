@@ -446,7 +446,7 @@ namespace Vistas
 
             SLDocument sl = new SLDocument();
 
-            System.Drawing.Bitmap bm = new System.Drawing.Bitmap(@"C:\xampp\htdocs\Proyecto\Vistas\imagenes\logoLili.PNG");
+            System.Drawing.Bitmap bm = new System.Drawing.Bitmap(@"C:\Users\KARIME\source\repos\Proyecto\Vistas\imagenes\logoLili.PNG");
             byte[] ba;
             using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
             {

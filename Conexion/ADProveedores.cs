@@ -65,7 +65,7 @@ namespace Conexion
                 nombre = prov[0].nombre;
                 apellido = prov[0].apellido;
             }
-            return string.Concat(nombre + apellido);
+            return string.Concat(nombre +" "+ apellido);
         }
     }
 }
