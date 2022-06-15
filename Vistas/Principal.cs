@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.Conventions;
+using SpreadsheetLight.Drawing;
 
 namespace Vistas
 {
@@ -114,18 +115,54 @@ namespace Vistas
         {
             SLDocument sl = new SLDocument();
 
-            int celdaCabecera = 7; //indica desde donde vamos a empezar
+            System.Drawing.Bitmap bm = new System.Drawing.Bitmap(@"C:\xampp\htdocs\Proyecto\Vistas\imagenes\logoLili.PNG");
+            byte[] ba;
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                bm.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                ms.Close();
+                ba = ms.ToArray();
+            }
+
+            SLPicture pic = new SLPicture(ba, DocumentFormat.OpenXml.Packaging.ImagePartType.Png);
+            pic.SetPosition(0, 0);
+            pic.ResizeInPixels(150, 80);
+            sl.InsertPicture(pic);
+
+            sl.SetCellValue("C2", "Reporte de entradas"); //Titulo
+            SLStyle estiloT = sl.CreateStyle();
+            estiloT.Font.FontName = "Arial";
+            estiloT.Font.FontSize = 14;
+            estiloT.Font.Bold = true;
+            sl.SetCellStyle("C2", estiloT);
+            sl.MergeWorksheetCells("C2", "E2");
+
+            int celdaCabecera = 6, celdaInicial = 6; //indica desde donde vamos a empezar
             
-            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Entradas"); //Nombre de la hoja de excel
-
-            sl.SetCellValue("B" + 3, "Reporte de entradas"); //Titulo
-            sl.SetCellValue("B" + 5, "Entradas");
-
+            
+            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Entradas"); //Nombre de la hoja de excel            
             //Encabezados de la tabla
             sl.SetCellValue("B"+ celdaCabecera, "Usuario");
             sl.SetCellValue("C" + celdaCabecera, "Producto");
             sl.SetCellValue("D" + celdaCabecera, "Cantidad");
             sl.SetCellValue("E" + celdaCabecera, "Fecha");
+
+            SLStyle estiloCa = sl.CreateStyle();
+            estiloCa.Font.FontName = "Arial";
+            estiloCa.Font.FontSize = 12;
+            estiloCa.Font.Bold = true;
+            estiloCa.Font.FontColor = System.Drawing.Color.White;
+            estiloCa.Fill.SetPattern(DocumentFormat.OpenXml.Spreadsheet.PatternValues.Solid, System.Drawing.Color.Red, System.Drawing.Color.Red);
+            sl.SetCellStyle("B" + celdaCabecera, "E" + celdaCabecera, estiloCa);
+
+            SLStyle estiloEx = sl.CreateStyle();
+            estiloEx.FormatCode = "#,##0.00";
+            sl.SetCellStyle("D"+celdaInicial,"E" + celdaCabecera, estiloEx);
+
+            //sl.SetCellValue("D" + celdaCabecera + 1, "SUM(D6:D11)");
+            //sl.AutoFitColumn("B", "F");
+
+
 
             //Query 
             IMongoCollection<BsonDocument> entradasCollection = GetDatabase().GetCollection<BsonDocument>("Entradas");
@@ -146,6 +183,16 @@ namespace Vistas
                 sl.SetCellValue("E" + celdaCabecera, res["Fecha"].ToString());
             }
 
+            SLStyle EstiloB = sl.CreateStyle();
+            EstiloB.Border.LeftBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.LeftBorder.Color = System.Drawing.Color.Black;
+            EstiloB.Border.TopBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.RightBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.BottomBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            sl.SetCellStyle("B" + celdaInicial, "E" + celdaCabecera, EstiloB);
+
+            sl.AutoFitColumn("B","E");
+
             foreach (BsonDocument res in result)
             {
                 Console.WriteLine(res.ToString());
@@ -160,7 +207,7 @@ namespace Vistas
         {
             Pedidos Objeto = new Pedidos();
             Objeto.MdiParent = this;
-            Objeto.NombreUsuario = this.Nombre;
+            Objeto.NombreUsuario = this.Nombre; 
             Objeto.idUsuario = this.IdUsuario;
             Objeto.Show();
         }

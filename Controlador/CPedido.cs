@@ -17,6 +17,7 @@ namespace Controlador
             Objeto.idProveedor = idProveedor;
             Objeto.Cantidad = cantidad;
             Objeto.idProducto = idProducto;
+            Objeto.NombreProducto = nombreProducto;
             Objeto.Fecha = fecha;
             Objeto.idUsuario = idUsuario;
             Objeto.Status = status;

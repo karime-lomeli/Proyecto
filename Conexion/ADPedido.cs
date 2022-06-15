@@ -21,6 +21,7 @@ namespace Conexion
         public string Fecha;
         public string idUsuario;
         public string Status;
+        public string NombreProducto;
 
         MongoDatabase db = new MongoClient("mongodb://localhost:27017").GetServer().GetDatabase("Lili");
         public string IdPedido

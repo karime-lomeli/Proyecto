@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
 
+using MongoDB.Driver;
+using SpreadsheetLight;
+using MongoDB.Bson;
+using System.Linq;
+
 namespace Vistas
 {
     public partial class Pedidos : Form
@@ -28,6 +33,19 @@ namespace Vistas
         private int cantidadnueva;
         public string idProd;
         public string NombreUsuario = " ";
+        public string NombreProdcuto = " ";
+
+        private IMongoDatabase GetDatabase()
+        {
+            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
+            return mongoClient.GetDatabase("Lili");
+        }
+
+        public IMongoCollection<BsonDocument> GetCollection(string Pedidos)
+        {
+            return GetDatabase().GetCollection<BsonDocument>(Pedidos);
+
+        }
 
         public Pedidos()
         {
@@ -214,6 +232,10 @@ namespace Vistas
             Proveedor.DataSource = CPedido.MostrarProveedor();
             Proveedor.ValueMember = "idProveedor";
             Proveedor.DisplayMember = "nombre";
+
+            cmBoxReporteProveedor.DataSource = CPedido.MostrarProveedor();
+            cmBoxReporteProveedor.ValueMember = "idProveedor";
+            cmBoxReporteProveedor.DisplayMember = "nombre";
         }
         private void dataListado_DoubleClick(object sender, EventArgs e)
         {
@@ -269,6 +291,61 @@ namespace Vistas
             this.HabilitarBotones();
             this.Limpiar();
             this.Habilitar(false);
+        }
+
+        private void btnReporteProveedor_Click(object sender, EventArgs e)
+        {
+            string id = cmBoxReporteProveedor.SelectedValue.ToString();
+            Console.WriteLine(id);
+
+            SLDocument sl = new SLDocument();
+
+            int celdaCabecera = 7; //indica desde donde vamos a empezar
+
+            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos"); //Nombre de la hoja de excel
+
+            sl.SetCellValue("B" + 3, "Reporte de inventario"); //Titulo
+            sl.SetCellValue("B" + 5, "Proveedor");
+
+            //Encabezados de la tabla
+            sl.SetCellValue("B" + celdaCabecera, "ID");
+            sl.SetCellValue("C" + celdaCabecera, "Producto");
+            sl.SetCellValue("D" + celdaCabecera, "Cantidad");
+            sl.SetCellValue("E" + celdaCabecera, "Status");
+
+            //Query 
+            IMongoCollection<BsonDocument> pedidosCollection = GetDatabase().GetCollection<BsonDocument>("Pedidos");
+
+            List<BsonDocument> result = pedidosCollection.Aggregate()
+                 .Match(new BsonDocument { { "idProveedor", id } })
+                 .Lookup("Proveedor", "idProveedor", "idProveedor", @as: "proveedor_docs")
+                 .As<BsonDocument>()
+                 .ToList();
+
+
+            foreach (BsonDocument res in result)
+            {
+                celdaCabecera++;
+                sl.SetCellValue("B" + celdaCabecera, res["idProducto"].ToString());
+                sl.SetCellValue("C" + celdaCabecera, res["NombreProducto"].ToString());
+                sl.SetCellValue("D" + celdaCabecera, res["Cantidad"].ToInt32());
+                sl.SetCellValue("E" + celdaCabecera, res["Status"].ToString());
+            }
+
+
+            foreach (BsonDocument res in result)
+            {
+                Console.WriteLine(res.ToString());
+            }
+
+            sl.SaveAs("ReporteProveedor.xlsx");
+
+            MessageBox.Show("Reporte de proveedores generado con exito", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dataListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
