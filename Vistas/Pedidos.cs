@@ -110,7 +110,7 @@ namespace Vistas
              this.Limpiar();
              this.LimpiarDetalle();
              this.Habilitar(true);
-            //CPedido.InsertarProveedor();
+           // CPedido.InsertarProveedor();
         }
         private void OcultarColumnas()
         {

@@ -9,10 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Controlador;
 
+
+using MongoDB.Driver;
+using SpreadsheetLight;
+using MongoDB.Bson;
+using System.Linq;
+
+
 namespace Vistas
 {
     public partial class Linea : Form
     {
+        private IMongoDatabase GetDatabase()
+        {
+            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
+            return mongoClient.GetDatabase("Lili");
+        }
+
+        public IMongoCollection<BsonDocument> GetCollection(string Productos)
+        {
+            return GetDatabase().GetCollection<BsonDocument>(Productos);
+
+        }
+
         private bool IsNuevo = false;
         private bool IsEditar = false;
 
@@ -425,6 +444,56 @@ namespace Vistas
         {
             string id = Almacen.SelectedValue.ToString();
             Console.WriteLine(id);
+
+            SLDocument sl = new SLDocument();
+
+            int celdaCabecera = 7; //indica desde donde vamos a empezar
+
+            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos"); //Nombre de la hoja de excel
+
+            sl.SetCellValue("B" + 3, "Reporte de inventario"); //Titulo
+            sl.SetCellValue("B" + 5, "Almacen");
+
+            //Encabezados de la tabla
+            sl.SetCellValue("B" + celdaCabecera, "ID");
+            sl.SetCellValue("C" + celdaCabecera, "Nombre");
+            sl.SetCellValue("D" + celdaCabecera, "Descripcion");
+            sl.SetCellValue("E" + celdaCabecera, "Linea");
+            sl.SetCellValue("F" + celdaCabecera, "Requerido");
+            sl.SetCellValue("G" + celdaCabecera, "Stock");
+            sl.SetCellValue("H" + celdaCabecera, "Minimo");
+
+            //Query 
+            IMongoCollection<BsonDocument> productosCollection = GetDatabase().GetCollection<BsonDocument>("Productos");
+
+            List<BsonDocument> result = productosCollection.Aggregate()
+                 .Match(new BsonDocument { { "almacen", id } })
+                 //.Project(new BsonDocument { { "_id", 0 } })
+                 .Lookup("Almacen", "almacen", "idAlmacen", @as: "almacen_docs")
+                 .As<BsonDocument>()
+                 .ToList();
+
+            foreach (BsonDocument res in result)
+            {
+                celdaCabecera++;
+                sl.SetCellValue("B" + celdaCabecera, res["id"].ToString());
+                sl.SetCellValue("C" + celdaCabecera, res["nombre"].ToString());
+                sl.SetCellValue("D" + celdaCabecera, res["descripcion"].ToString());
+                sl.SetCellValue("E" + celdaCabecera, res["linea"].ToString());
+                sl.SetCellValue("F" + celdaCabecera, res["requerido"].ToInt32());
+                sl.SetCellValue("G" + celdaCabecera, res["stock"].ToInt32());
+                sl.SetCellValue("H" + celdaCabecera, res["minimo"].ToInt32());
+            }
+
+
+            foreach (BsonDocument res in result)
+            {
+                Console.WriteLine(res.ToString());
+            }
+
+            sl.SaveAs("ReporteAlmacen.xlsx");
+
+            MessageBox.Show("Reporte de inventario generado con exito", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

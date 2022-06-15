@@ -75,6 +75,7 @@ namespace Controlador
         }
         public static void InsertarProveedor()
         {
+            Console.WriteLine("insertar");
             ADProveedores Objeto = new ADProveedores();
             Objeto.nombre = "Juan";
             Objeto.apellido = "Zamarripa";
