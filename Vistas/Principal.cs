@@ -152,7 +152,7 @@ namespace Vistas
             estiloCa.Font.FontSize = 12;
             estiloCa.Font.Bold = true;
             estiloCa.Font.FontColor = System.Drawing.Color.White;
-            estiloCa.Fill.SetPattern(DocumentFormat.OpenXml.Spreadsheet.PatternValues.Solid, System.Drawing.Color.Red, System.Drawing.Color.Red);
+            estiloCa.Fill.SetPattern(DocumentFormat.OpenXml.Spreadsheet.PatternValues.Solid, System.Drawing.Color.Blue, System.Drawing.Color.Blue);
             sl.SetCellStyle("B" + celdaCabecera, "E" + celdaCabecera, estiloCa);
 
             SLStyle estiloEx = sl.CreateStyle();
@@ -198,7 +198,7 @@ namespace Vistas
                 Console.WriteLine(res.ToString());
             }
 
-            sl.SaveAs("ReporteEntradas.xlsx");
+            sl.SaveAs("Reporte de entradas.xlsx");
 
             MessageBox.Show("Reporte de entradas generado con exito", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

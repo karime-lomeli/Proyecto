@@ -136,7 +136,7 @@ namespace Vistas
             this.btnReportes.Location = new System.Drawing.Point(21, 542);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(4);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(141, 70);
+            this.btnReportes.Size = new System.Drawing.Size(141, 79);
             this.btnReportes.TabIndex = 6;
             this.btnReportes.Text = "Generar Reporte de Entradas";
             this.btnReportes.UseVisualStyleBackColor = false;

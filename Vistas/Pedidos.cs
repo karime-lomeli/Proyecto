@@ -13,6 +13,7 @@ using MongoDB.Driver;
 using SpreadsheetLight;
 using MongoDB.Bson;
 using System.Linq;
+using SpreadsheetLight.Drawing;
 
 namespace Vistas
 {
@@ -300,18 +301,51 @@ namespace Vistas
 
             SLDocument sl = new SLDocument();
 
-            int celdaCabecera = 7; //indica desde donde vamos a empezar
+            System.Drawing.Bitmap bm = new System.Drawing.Bitmap(@"C:\xampp\htdocs\Proyecto\Vistas\imagenes\logoLili.PNG");
+            byte[] ba;
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                bm.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                ms.Close();
+                ba = ms.ToArray();
+            }
 
-            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos"); //Nombre de la hoja de excel
+            SLPicture pic = new SLPicture(ba, DocumentFormat.OpenXml.Packaging.ImagePartType.Png);
+            pic.SetPosition(0, 0);
+            pic.ResizeInPixels(150, 80);
+            sl.InsertPicture(pic);
 
-            sl.SetCellValue("B" + 3, "Reporte de inventario"); //Titulo
-            sl.SetCellValue("B" + 5, "Proveedor");
+            sl.SetCellValue("B2", "Reporte de proveedores"); //Titulo
+            SLStyle estiloT = sl.CreateStyle();
+            estiloT.Font.FontName = "Arial";
+            estiloT.Font.FontSize = 14;
+            estiloT.Font.Bold = true;
+            sl.SetCellStyle("B2", estiloT);
+            sl.MergeWorksheetCells("B2", "E2");
 
+            int celdaCabecera = 5, celdaInicial = 5; //indica desde donde vamos a empezar
+
+            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos en proveedor"); //Nombre de la hoja de excel
             //Encabezados de la tabla
-            sl.SetCellValue("B" + celdaCabecera, "ID");
-            sl.SetCellValue("C" + celdaCabecera, "Producto");
-            sl.SetCellValue("D" + celdaCabecera, "Cantidad");
-            sl.SetCellValue("E" + celdaCabecera, "Status");
+            sl.SetCellValue("A" + celdaCabecera, "ID");
+            sl.SetCellValue("B" + celdaCabecera, "Producto");
+            sl.SetCellValue("C" + celdaCabecera, "Cantidad");
+            sl.SetCellValue("D" + celdaCabecera, "Status");
+
+            SLStyle estiloCa = sl.CreateStyle();
+            estiloCa.Font.FontName = "Arial";
+            estiloCa.Font.FontSize = 12;
+            estiloCa.Font.Bold = true;
+            estiloCa.Font.FontColor = System.Drawing.Color.White;
+            estiloCa.Fill.SetPattern(DocumentFormat.OpenXml.Spreadsheet.PatternValues.Solid, System.Drawing.Color.Orange, System.Drawing.Color.Orange);
+            sl.SetCellStyle("A" + celdaCabecera, "D" + celdaCabecera, estiloCa);
+
+            SLStyle estiloEx = sl.CreateStyle();
+            estiloEx.FormatCode = "#,##0.00";
+            sl.SetCellStyle("A" + celdaInicial, "D" + celdaCabecera, estiloEx);
+
+            //sl.SetCellValue("E" + celdaCabecera++, "SUM(D6:D11)");
+            //sl.AutoFitColumn("B", "F");
 
             //Query 
             IMongoCollection<BsonDocument> pedidosCollection = GetDatabase().GetCollection<BsonDocument>("Pedidos");
@@ -326,11 +360,21 @@ namespace Vistas
             foreach (BsonDocument res in result)
             {
                 celdaCabecera++;
-                sl.SetCellValue("B" + celdaCabecera, res["idProducto"].ToString());
-                sl.SetCellValue("C" + celdaCabecera, res["NombreProducto"].ToString());
-                sl.SetCellValue("D" + celdaCabecera, res["Cantidad"].ToInt32());
-                sl.SetCellValue("E" + celdaCabecera, res["Status"].ToString());
+                sl.SetCellValue("A" + celdaCabecera, res["idProducto"].ToString());
+                sl.SetCellValue("B" + celdaCabecera, res["NombreProducto"].ToString());
+                sl.SetCellValue("C" + celdaCabecera, res["Cantidad"].ToInt32());
+                sl.SetCellValue("D" + celdaCabecera, res["Status"].ToString());
             }
+
+            SLStyle EstiloB = sl.CreateStyle();
+            EstiloB.Border.LeftBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.LeftBorder.Color = System.Drawing.Color.Black;
+            EstiloB.Border.TopBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.RightBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.BottomBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            sl.SetCellStyle("A" + celdaInicial, "D" + celdaCabecera, EstiloB);
+
+            sl.AutoFitColumn("A", "D");
 
 
             foreach (BsonDocument res in result)
@@ -338,7 +382,7 @@ namespace Vistas
                 Console.WriteLine(res.ToString());
             }
 
-            sl.SaveAs("ReporteProveedor.xlsx");
+            sl.SaveAs("Reporte de proveedor.xlsx");
 
             MessageBox.Show("Reporte de proveedores generado con exito", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

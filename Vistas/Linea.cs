@@ -13,7 +13,7 @@ using Controlador;
 using MongoDB.Driver;
 using SpreadsheetLight;
 using MongoDB.Bson;
-
+using SpreadsheetLight.Drawing;
 
 namespace Vistas
 {
@@ -446,13 +446,31 @@ namespace Vistas
 
             SLDocument sl = new SLDocument();
 
-            int celdaCabecera = 7; //indica desde donde vamos a empezar
+            System.Drawing.Bitmap bm = new System.Drawing.Bitmap(@"C:\xampp\htdocs\Proyecto\Vistas\imagenes\logoLili.PNG");
+            byte[] ba;
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                bm.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                ms.Close();
+                ba = ms.ToArray();
+            }
 
-            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos"); //Nombre de la hoja de excel
+            SLPicture pic = new SLPicture(ba, DocumentFormat.OpenXml.Packaging.ImagePartType.Png);
+            pic.SetPosition(0, 0);
+            pic.ResizeInPixels(150, 80);
+            sl.InsertPicture(pic);
 
-            sl.SetCellValue("B" + 3, "Reporte de inventario"); //Titulo
-            sl.SetCellValue("B" + 5, "Almacen");
+            sl.SetCellValue("D2", "Reporte de almacen"); //Titulo
+            SLStyle estiloT = sl.CreateStyle();
+            estiloT.Font.FontName = "Arial";
+            estiloT.Font.FontSize = 14;
+            estiloT.Font.Bold = true;
+            sl.SetCellStyle("D2", estiloT);
+            sl.MergeWorksheetCells("D2", "F2");
 
+            int celdaCabecera = 6, celdaInicial = 6; //indica desde donde vamos a empezar
+
+            sl.RenameWorksheet(SLDocument.DefaultFirstSheetName, "Productos en almacen"); //Nombre de la hoja de excel
             //Encabezados de la tabla
             sl.SetCellValue("B" + celdaCabecera, "ID");
             sl.SetCellValue("C" + celdaCabecera, "Nombre");
@@ -461,6 +479,22 @@ namespace Vistas
             sl.SetCellValue("F" + celdaCabecera, "Requerido");
             sl.SetCellValue("G" + celdaCabecera, "Stock");
             sl.SetCellValue("H" + celdaCabecera, "Minimo");
+
+            SLStyle estiloCa = sl.CreateStyle();
+            estiloCa.Font.FontName = "Arial";
+            estiloCa.Font.FontSize = 12;
+            estiloCa.Font.Bold = true;
+            estiloCa.Font.FontColor = System.Drawing.Color.White;
+            estiloCa.Fill.SetPattern(DocumentFormat.OpenXml.Spreadsheet.PatternValues.Solid, System.Drawing.Color.Red, System.Drawing.Color.Red);
+            sl.SetCellStyle("B" + celdaCabecera, "H" + celdaCabecera, estiloCa);
+
+            SLStyle estiloEx = sl.CreateStyle();
+            estiloEx.FormatCode = "#,##0.00";
+            sl.SetCellStyle("D" + celdaInicial, "H" + celdaCabecera, estiloEx);
+
+            //sl.SetCellValue("D" + celdaCabecera + 1, "SUM(D6:D11)");
+            //sl.AutoFitColumn("B", "F");
+
 
             //Query 
             IMongoCollection<BsonDocument> productosCollection = GetDatabase().GetCollection<BsonDocument>("Productos");
@@ -484,15 +518,25 @@ namespace Vistas
                 sl.SetCellValue("H" + celdaCabecera, res["minimo"].ToInt32());
             }
 
+            SLStyle EstiloB = sl.CreateStyle();
+            EstiloB.Border.LeftBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.LeftBorder.Color = System.Drawing.Color.Black;
+            EstiloB.Border.TopBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.RightBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            EstiloB.Border.BottomBorder.BorderStyle = DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues.Thin;
+            sl.SetCellStyle("B" + celdaInicial, "H" + celdaCabecera, EstiloB);
+
+            sl.AutoFitColumn("B", "H");
+
 
             foreach (BsonDocument res in result)
             {
                 Console.WriteLine(res.ToString());
             }
 
-            sl.SaveAs("ReporteAlmacen.xlsx");
+            sl.SaveAs("Reporte de almacen.xlsx");
 
-            MessageBox.Show("Reporte de inventario generado con exito", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Reporte de almacen generado con exito", "Dashwork", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
