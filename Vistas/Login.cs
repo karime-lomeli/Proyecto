@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Controlador;
 using System.Net.Sockets;
 using System.Net;
+using System.IO;
 
 namespace Vistas
 {
@@ -40,12 +41,12 @@ namespace Vistas
         private void button1_Click(object sender, EventArgs e)
         {
             DataTable Datos = CUsuario.Login(this.txtCorreo.Text, this.txtPass.Text);
-
+            string imprimir = " ";
             if (Datos.Rows.Count==0)
             {
                 MensajeError("Datos incorrectos");
             }
-            
+           
             else
             {
                 // Notificacion desde server sockets
@@ -78,7 +79,7 @@ namespace Vistas
                         Console.WriteLine("Echoed test = {0}",
                         Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
-                        string imprimir = Convert.ToString(Encoding.ASCII.GetString(bytes, 0, bytesRec).ToString());
+                        imprimir = Convert.ToString(Encoding.ASCII.GetString(bytes, 0, bytesRec).ToString());
 
 
 
@@ -101,7 +102,12 @@ namespace Vistas
                 {
                     Console.WriteLine(eb.ToString());
                 }
-                
+                notifyIcon1.Icon = new Icon(Path.GetFullPath(@"C:\Users\KARIME\source\repos\Proyecto\Vistas\imagenes\notificaciones.ico"));
+                notifyIcon1.Text = imprimir;
+                notifyIcon1.Visible = true;
+                notifyIcon1.BalloonTipTitle = "Dashwork";
+                notifyIcon1.BalloonTipText = imprimir;
+                notifyIcon1.ShowBalloonTip(100);
                 // Fin notificacion
                
 

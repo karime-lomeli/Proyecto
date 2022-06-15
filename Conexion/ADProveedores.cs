@@ -56,10 +56,16 @@ namespace Conexion
         }
         public string BuscarId(string texto)
         {
+            string nombre=" ", apellido=" ";
             MongoCollection Proveedor = db.GetCollection<ADProveedores>("Proveedor");
             var filtro = Query<ADProveedores>.EQ(cl => cl.idProveedor, texto);
             List<ADProveedores> prov = Proveedor.FindAs<ADProveedores>(filtro).ToList();
-            return "Hola";
+            if (prov.Count != 0)
+            {
+                nombre = prov[0].nombre;
+                apellido = prov[0].apellido;
+            }
+            return string.Concat(nombre + apellido);
         }
     }
 }
